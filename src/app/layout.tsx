@@ -4,13 +4,11 @@ import { PropsWithChildren } from 'react';
 import { LanguageProvider } from '@inlang/paraglide-next';
 import type { Metadata } from 'next';
 
-import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
-import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
-import { fonts } from '@/lib/fonts';
+import { roboto } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import { languageTag } from '@/paraglide/runtime.js';
 
@@ -52,12 +50,15 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <LanguageProvider>
       <html lang={languageTag()} suppressHydrationWarning>
-        <body className={cn('min-h-screen font-sans', fonts)}>
+        <body
+          className={cn(
+            'bg-background min-h-screen overflow-y-scroll font-sans antialiased',
+            roboto.variable
+          )}
+        >
           <ThemeProvider attribute="class">
             <Navbar />
             {children}
-            <ThemeSwitcher className="absolute bottom-5 right-5 z-10" />
-            <Footer />
             <Toaster />
           </ThemeProvider>
         </body>

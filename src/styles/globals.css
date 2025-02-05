@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add global scrollbar styles */
 @layer base {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  * {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -24,6 +36,8 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
+    --font-sans: 'Roboto', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
   }
 
   .dark {
@@ -46,6 +60,31 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+  }
+
+  /* Add Roboto font-face definitions */
+  @font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/roboto-v47-latin-regular.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/roboto-v47-latin-600.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/roboto-v47-latin-800.woff2') format('woff2');
   }
 }
 
