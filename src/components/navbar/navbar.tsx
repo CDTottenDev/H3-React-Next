@@ -66,9 +66,9 @@ export const Navbar = () => {
         >
           {[
             ['Home', '/'],
-            ['Services', '/#services'],
+            ['Services', '#services'],
             ['Projects', '/projects'],
-            ['About', '/#about'],
+            ['About', '#about'],
           ].map(([title, url]) => (
             <Link
               key={url}

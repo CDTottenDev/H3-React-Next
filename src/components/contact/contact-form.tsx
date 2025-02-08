@@ -15,7 +15,10 @@ export function ContactForm({ onClose }: ContactFormProps) {
           ×
         </button>
         <h2 className="mb-6 text-center text-2xl font-bold">Contact Us</h2>
-        <form className="grid gap-6 md:grid-cols-2">
+        <form
+          className="grid gap-6 md:grid-cols-2"
+          onSubmit={(e) => e.preventDefault()}
+        >
           <div className="space-y-4 md:order-2">
             <div>
               <Input type="text" placeholder="Name" name="name" required />

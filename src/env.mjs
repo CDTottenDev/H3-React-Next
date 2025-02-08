@@ -13,6 +13,7 @@ export const env = createEnv({
     STRIPE_WEBHOOK_SECRET_KEY: z.string().min(1),
     STRIPE_SUBSCRIPTION_PRICE_ID: z.string().min(1),
     GOOGLE_SITE_VERIFICATION_ID: z.string().optional(),
+    RESEND_API_KEY: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().min(1),
@@ -34,6 +35,7 @@ export const env = createEnv({
     GOOGLE_SITE_VERIFICATION_ID: process.env.GOOGLE_SITE_VERIFICATION_ID,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });

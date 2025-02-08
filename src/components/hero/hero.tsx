@@ -1,7 +1,9 @@
+/* eslint-disable tailwindcss/enforces-negative-arbitrary-values */
 'use client';
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { ContactForm } from '../contact/contact-form';
 
@@ -20,7 +22,7 @@ export default function Hero() {
   return (
     <section className="relative flex h-screen items-center justify-center overflow-hidden bg-[#cccccc] dark:bg-neutral-950">
       {/* Content */}
-      <div className="relative z-10 mx-auto mb-8 max-w-4xl px-4 text-center text-white dark:text-neutral-50">
+      <div className="relative z-10 mx-auto mt-40 max-w-4xl px-4 text-center text-white dark:text-neutral-50">
         <h1 className="mb-6 text-4xl font-bold text-black md:text-6xl dark:text-neutral-50 ">
           Cut <em className="text-[64px] font-bold text-red-500">Above</em> the
           Rest
@@ -32,16 +34,35 @@ export default function Hero() {
             expertise, Endless possibilities
           </span>
         </p>
-        <div>
-          <div className="mt-8">
+      </div>
+
+      {/* CTA Button - Moved to top left */}
+      <div className="absolute left-1/4 top-8 z-50">
+        <div className="relative">
+          <Link href="#featured-projects">
             <Image
               src="/images/custom-SVG-CTA-button-H3-01.svg"
               alt="CTA Button"
-              width={208}
-              height={219}
+              width={300}
+              height={300}
               className="mx-auto cursor-pointer transition-transform duration-300 hover:scale-105"
             />
-          </div>
+            <p className="absolute -inset-0 z-10 ml-6 flex -translate-y-12 items-center justify-center text-center text-black dark:text-neutral-50">
+              <em className="animate-pulse text-[24px] font-bold text-red-500">
+                <span className="bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
+                  CLICK HERE!
+                </span>
+                <br />
+                <span className="text-[20px] font-extrabold leading-none text-black drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+                  <span className="text-[20px] text-red-500">
+                    SNOW&apos;S HERE!
+                  </span>
+                  <br />
+                  SNOW REMOVAL
+                </span>
+              </em>
+            </p>
+          </Link>
         </div>
       </div>
 

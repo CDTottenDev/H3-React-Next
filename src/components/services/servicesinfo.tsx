@@ -2,7 +2,11 @@
 
 import { useState } from 'react';
 
-const ServicesInfo = () => {
+interface ServicesInfoProps {
+  id?: string;
+}
+
+export function ServicesInfo({ id }: ServicesInfoProps) {
   const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
@@ -26,7 +30,10 @@ const ServicesInfo = () => {
   };
 
   return (
-    <div className="bg-[#cccccc] py-20 dark:bg-gray-900">
+    <section
+      id={id}
+      className="scroll-mt-[15vh] bg-[#cccccc] py-20 dark:bg-gray-900"
+    >
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
@@ -231,8 +238,6 @@ const ServicesInfo = () => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
-};
-
-export default ServicesInfo;
+}

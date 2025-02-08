@@ -4,7 +4,7 @@ import FeaturedProjects from '@/components/feat-projects/feat-projects';
 import Footer from '@/components/footer';
 import Hero from '@/components/hero/hero';
 import PageBreak from '@/components/pagebreak';
-import ServicesInfo from '@/components/services/servicesinfo';
+import { ServicesInfo } from '@/components/services/servicesinfo';
 import Testimonials from '@/components/testimonials/testimonials';
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       <BackgroundLogo />
       <Hero />
       <PageBreak />
-      <ServicesInfo />
+      <ServicesInfo id="services" />
       <PageBreak />
       <FeaturedProjects />
       <PageBreak />
