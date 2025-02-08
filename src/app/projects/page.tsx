@@ -177,6 +177,7 @@ const categories = [
 export default function ProjectsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const filteredProjects = projects
     .sort((a, b) => a.title.localeCompare(b.title))
@@ -189,8 +190,20 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex">
+      {/* Sidebar Toggle Button */}
+      <button
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        className="fixed left-0 top-1/2 z-20 h-10 w-6 -translate-y-1/2 rounded-r-md bg-red-500 text-white shadow-lg hover:bg-red-600"
+      >
+        {isSidebarOpen ? '<' : '>'}
+      </button>
+
       {/* Sidebar */}
-      <div className="w-64 border-r border-gray-200 p-4">
+      <div
+        className={`fixed z-10 h-screen w-64 border-r border-gray-200 bg-white p-4 transition-transform duration-300 sm:translate-x-0 ${
+          isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
         <div className="space-y-4">
           <input
             type="text"
