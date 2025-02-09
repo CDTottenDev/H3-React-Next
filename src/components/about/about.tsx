@@ -11,37 +11,45 @@ export default function About() {
             </h2>
             <div className="hover:shadow-3xl w-full rounded-xl bg-white/50 p-4 shadow-2xl backdrop-blur-sm transition-all duration-300 md:p-8 dark:bg-gray-800/50">
               <p className="text-center text-base leading-7 text-gray-600 md:text-lg md:leading-8 dark:text-gray-400">
-                At{' '}
-                <em className="text-black dark:text-white">
-                  <em className="font-bold text-red-500">H3</em> Excavation and
-                  Construction
-                </em>
-                , we&apos;re all about laying the groundwork to enhance your
-                property. With{' '}
-                <em className="text-black dark:text-white">15</em> years of
-                hands-on experience and{' '}
-                <em className="text-black dark:text-white">5</em> years steering
-                our own business, we understand what it takes to get your job
-                done right. From{' '}
-                <em className="text-black dark:text-white">grading</em> and{' '}
-                <em className="text-black dark:text-white">sloping</em> to{' '}
-                <em className="text-black dark:text-white">trenching</em> and
-                complete
-                <em className="text-black dark:text-white">
+                At <em className="font-bold text-red-500">H3</em> Excavation and
+                Construction , we&apos;re all about laying the groundwork to
+                enhance your property. With{' '}
+                <em className="font-medium text-gray-900 dark:text-gray-100">
+                  15
+                </em>{' '}
+                years of hands-on experience and{' '}
+                <em className="font-medium text-gray-900 dark:text-gray-100">
+                  5
+                </em>{' '}
+                years steering our own business, we understand what it takes to
+                get your job done right. From{' '}
+                <em className="font-medium text-gray-900 dark:text-gray-100">
+                  grading
+                </em>{' '}
+                and{' '}
+                <em className="font-medium text-gray-900 dark:text-gray-100">
+                  sloping
+                </em>{' '}
+                to{' '}
+                <em className="font-medium text-gray-900 dark:text-gray-100">
+                  trenching
+                </em>{' '}
+                and complete
+                <em className="font-medium text-gray-900 dark:text-gray-100">
                   septic system
                 </em>{' '}
                 installations, we&apos;ve got your excavation needs covered. As
                 a DEQ-certified company, you can trust that your septic work
                 will be done properly and up to code. We keep things simple:
-                <em className="text-black underline decoration-red-500 dark:text-white">
+                <em className="font-medium text-gray-900 underline decoration-red-500 dark:text-gray-100">
                   quality work
                 </em>
                 ,{' '}
-                <em className="text-black underline decoration-red-500 dark:text-white">
+                <em className="font-medium text-gray-900 underline decoration-red-500 dark:text-gray-100">
                   fair prices
                 </em>
                 , and{' '}
-                <em className="text-black underline decoration-red-500 dark:text-white">
+                <em className="font-medium text-gray-900 underline decoration-red-500 dark:text-gray-100">
                   clear communication
                 </em>
                 . When you choose H3, you&apos;re partnering with a team that
@@ -119,7 +127,7 @@ export default function About() {
               width={500}
               height={500}
               loading="lazy"
-              quality={75}
+              quality={50}
               className="rounded-lg"
             />
           </div>

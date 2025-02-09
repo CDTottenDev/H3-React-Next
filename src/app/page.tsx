@@ -7,7 +7,7 @@ import PageBreak from '@/components/pagebreak';
 import { ServicesInfo } from '@/components/services/servicesinfo';
 import Testimonials from '@/components/testimonials/testimonials';
 
-export default function Home() {
+export default async function Home() {
   return (
     <section>
       <BackgroundLogo />

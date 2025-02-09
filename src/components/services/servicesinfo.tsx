@@ -225,14 +225,11 @@ export function ServicesInfo({ id }: ServicesInfoProps) {
 
         {activeTooltip !== null && (
           <div
+            className="fixed z-50 mt-[-10px] max-w-xs -translate-x-1/2 -translate-y-full rounded-lg bg-gray-900 p-4 text-white shadow-lg"
             style={{
-              position: 'fixed',
               left: tooltipPosition.x,
               top: tooltipPosition.y,
-              transform: 'translate(-50%, -100%)',
-              marginTop: '-10px',
             }}
-            className="z-50 max-w-xs rounded-lg bg-gray-900 p-4 text-white shadow-lg"
           >
             {tooltipContent[activeTooltip]}
           </div>

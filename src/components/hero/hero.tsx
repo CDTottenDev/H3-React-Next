@@ -20,7 +20,27 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex h-screen items-center justify-center overflow-hidden bg-[#cccccc] bg-[url('/images/mobile/landing-page/h3background-mobile.jpeg')] bg-cover bg-center md:bg-none dark:bg-neutral-950">
+    <section className="relative flex h-screen items-center justify-center overflow-hidden bg-[#cccccc] md:bg-[#cccccc] dark:bg-neutral-950">
+      {/* Mobile Background Image */}
+      <div className="md:hidden">
+        <Image
+          src="/images/mobile/landing-page/h3background-mobile.webp"
+          alt="Background"
+          fill
+          priority
+          quality={75}
+          className="object-cover object-center"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 0,
+          }}
+        />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 mx-auto mt-20 max-w-4xl px-4 text-center text-white sm:mt-32 md:mt-40 lg:mt-48 xl:mt-56 2xl:mt-64 dark:text-neutral-50">
         <h1 className="mb-4 text-3xl font-bold text-black sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl dark:text-neutral-50">
@@ -51,16 +71,20 @@ export default function Hero() {
             <Image
               src="/images/custom-SVG-CTA-button-H3-01.svg"
               alt="CTA Button"
-              width={300}
-              height={300}
+              width={180}
+              height={180}
               className="mx-auto size-[180px] cursor-pointer transition-transform duration-300 hover:scale-105 sm:size-[160px] md:size-[160px] lg:size-[180px] xl:size-[220px]"
+              priority={true}
+              quality={75}
+              loading="eager"
+              sizes="(max-width: 768px) 180px, (max-width: 1024px) 160px, 180px"
             />
             <p className="absolute -inset-0 z-10 ml-3 flex -translate-y-8 items-center justify-center text-center text-black sm:ml-4 sm:-translate-y-10 md:ml-4 md:-translate-y-10 lg:ml-5 lg:-translate-y-12 dark:text-neutral-50">
               <em className="animate-pulse text-[18.4px] font-bold text-red-500 sm:text-[18px] md:text-[20px] lg:text-[22px]">
                 <span className="bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-[13.8px] text-transparent sm:text-[14px] md:text-[16px] lg:text-[18px]">
                   CLICK HERE!
                 </span>
-                <span className="block text-[11.5px] font-extrabold leading-tight text-black drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] sm:text-[11px] md:text-[12px] lg:text-[14px]">
+                <span className="block text-[11.5px] font-extrabold leading-tight text-black sm:text-[11px] md:text-[12px] lg:text-[14px]">
                   <span className="text-[11.5px] text-red-500 sm:text-[11px] md:text-[12px] lg:text-[14px]">
                     SNOW&apos;S HERE!
                   </span>
@@ -84,9 +108,14 @@ export default function Hero() {
             alt="Road Before Construction"
             width={1024}
             height={901}
-            priority
-            quality={75}
+            priority={false}
+            quality={50}
             className="h-[50vh] w-full object-cover md:h-[70vh]"
+            loading={
+              typeof window !== 'undefined' && window.innerWidth < 768
+                ? 'lazy'
+                : 'eager'
+            }
           />
           <div className="absolute inset-x-0 bottom-0 bg-black/50 p-2 text-center text-white">
             Before
@@ -102,9 +131,14 @@ export default function Hero() {
             alt="Road After Construction"
             width={1024}
             height={901}
-            priority
+            priority={false}
             quality={75}
             className="h-[50vh] w-full object-cover md:h-[70vh]"
+            loading={
+              typeof window !== 'undefined' && window.innerWidth < 768
+                ? 'lazy'
+                : 'eager'
+            }
           />
           <div className="absolute inset-x-0 bottom-0 bg-black/50 p-2 text-center text-white">
             After
@@ -113,10 +147,9 @@ export default function Hero() {
       </div>
       {/* Contact button to contact-form link */}
       <div
-        className={`fixed right-0 top-0 z-50 mr-20 mt-4 ${
-          scrolled
-            ? 'scale-x-80 translate-x-[-5vw] translate-y-[0.5vw] rounded-lg transition-all delay-75 duration-500 ease-in-out'
-            : 'transition-all duration-500 ease-in-out'
+        className={`fixed right-0 top-0 z-50 mr-20 mt-4 transition-transform duration-500 ease-in-out ${
+          scrolled &&
+          'scale-80 -translate-x-[5vw] translate-y-[0.5vw] rounded-lg'
         }`}
       >
         <button
@@ -125,14 +158,14 @@ export default function Hero() {
           onClick={() => setIsContactOpen(true)}
           aria-label="Open contact form"
         >
-          <span className="hidden text-[34px] font-bold text-[rgb(233,23,23)] sm:block">
+          <span className="hidden text-[34px] font-bold text-red-500 sm:block">
             Contact
           </span>
           <div className="block cursor-pointer rounded-br-[15px] rounded-tr-[5px] border-2 border-black bg-white px-5 py-1 text-center transition-all duration-0 sm:h-[35px]">
-            <span className="block text-[14px] font-bold leading-none text-[rgb(233,23,23)] md:hidden lg:hidden xl:hidden 2xl:hidden">
+            <span className="block text-[14px] font-bold leading-none text-red-500 md:hidden lg:hidden xl:hidden 2xl:hidden">
               Contact
             </span>
-            <span className="block text-[18px] font-bold leading-none text-[rgb(233,23,23)] md:-mt-1">
+            <span className="block text-[18px] font-bold leading-none text-red-500 md:-mt-1">
               Here
             </span>
           </div>

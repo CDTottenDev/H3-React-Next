@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Resend } from 'resend';
 
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
@@ -9,7 +8,6 @@ import { useToast } from '@/components/ui/use-toast';
 export function ContactFormClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -22,6 +20,8 @@ export function ContactFormClient() {
     const message = formData.get('message') as string;
 
     try {
+      const { Resend } = await import('resend');
+      const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
       await resend.emails.send({
         from: 'onboarding@resend.dev',
         to: 'H3excavationandconst@gmail.com',

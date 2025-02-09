@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import ProjectCard from './components/projectcard';
 
@@ -177,16 +177,20 @@ const categories = [
 export default function ProjectsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const filteredProjects = projects
-    .sort((a, b) => a.title.localeCompare(b.title))
-    .filter(
-      (project) =>
-        project.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-        (selectedCategory === 'All' ||
-          project.category.split(', ').includes(selectedCategory))
-    );
+  const filteredProjects = useMemo(
+    () =>
+      projects
+        .sort((a, b) => a.title.localeCompare(b.title))
+        .filter(
+          (project) =>
+            project.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+            (selectedCategory === 'All' ||
+              project.category.split(', ').includes(selectedCategory))
+        ),
+    [searchTerm, selectedCategory]
+  );
 
   return (
     <div className="flex">

@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             height={400}
             className="h-48 w-full object-cover md:h-full"
             loading="lazy"
-            quality={75}
+            quality={50}
             sizes="(max-width: 768px) 100vw, 48rem"
           />
         </div>
