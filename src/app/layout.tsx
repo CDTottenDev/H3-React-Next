@@ -1,13 +1,13 @@
 import '@/styles/globals.css';
 
-import { PropsWithChildren } from 'react';
-import { LanguageProvider } from '@inlang/paraglide-next';
+import { PropsWithChildren, Suspense } from 'react';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import Script from 'next/script';
+
+import Loading from './loading';
 
 import { Navbar } from '@/components/navbar/navbar';
-import { ThemeProvider } from '@/components/theme-provider';
+import ThemeProviderWrapper from '@/components/theme-provider-wrapper';
 import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
 import { cn } from '@/lib/utils';
@@ -56,30 +56,31 @@ export const generateMetadata = (): Metadata => ({
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <LanguageProvider>
-      <html
-        lang={languageTag()}
-        suppressHydrationWarning
-        className={roboto.className}
+    <html
+      lang={languageTag()}
+      suppressHydrationWarning
+      className={roboto.className}
+    >
+      <head>
+        <style>{/* Critical CSS can be added here if needed */}</style>
+      </head>
+      <body
+        className={cn(
+          'min-h-screen overflow-y-scroll bg-background font-sans antialiased',
+          roboto.variable
+        )}
       >
-        <head>
-          <style>{/* Critical CSS can be added here if needed */}</style>
-        </head>
-        <body
-          className={cn(
-            'bg-background min-h-screen overflow-y-scroll font-sans antialiased',
-            roboto.variable
-          )}
-        >
-          <ThemeProvider attribute="class">
-            <Navbar />
-            {children}
-            <Toaster />
-            <Script src="https://example.com/script.js" strategy="lazyOnload" />
-          </ThemeProvider>
-        </body>
-      </html>
-    </LanguageProvider>
+        <Suspense fallback={<Loading />}>
+          <ThemeProviderWrapper attribute="class">
+            <>
+              <Navbar />
+              {children}
+              <Toaster />
+            </>
+          </ThemeProviderWrapper>
+        </Suspense>
+      </body>
+    </html>
   );
 };
 
