@@ -40,13 +40,14 @@ export const Navbar = () => {
             {/* Glow effect */}
             <div className="absolute -inset-4 rounded-full bg-white/20 opacity-0 blur-xl transition-opacity duration-300 dark:opacity-100" />
             <Image
-              src="/images/home/H3 Logo Final.svg"
+              src="/images/home/H3-logo-banner.webp"
               alt="H3 Logo"
-              width={300}
-              height={75}
+              width={250}
+              height={150}
               className="relative z-10 h-[75px] w-auto transition-all duration-500 ease-in-out md:h-[60px]"
               priority
               quality={75}
+              fetchPriority="high"
             />
             <span className="hidden text-lg font-bold md:inline">
               <span className="text-black dark:text-white">H3</span>{' '}

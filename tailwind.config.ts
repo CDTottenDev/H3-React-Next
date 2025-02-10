@@ -9,6 +9,7 @@ const config: Config = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   prefix: '',
+  purge: ['./src/**/*.{js,ts,jsx,tsx}', './src/**/*.{html,js}'],
   theme: {
     fontFamily: {
       sans: ['var(--font-roboto)'],
