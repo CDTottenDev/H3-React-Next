@@ -23,8 +23,8 @@ const nextConfig = {
     ];
   },
   env: {
-    RESEND_API_KEY: process.env.RESEND_API_KEY,
-    NEXT_PUBLIC_RESEND_API_KEY: process.env.NEXT_PUBLIC_RESEND_API_KEY,
+    NEXT_PUBLIC_APP_URL:
+      process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   },
 };
 

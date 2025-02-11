@@ -14,26 +14,22 @@ export function ContactFormClient() {
     setIsSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const phone = formData.get('phone') as string;
-    const message = formData.get('message') as string;
+    const data = Object.fromEntries(formData);
 
     try {
-      const { Resend } = await import('resend');
-      const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-      await resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: 'H3excavationandconst@gmail.com',
-        subject: `New Contact Form Submission from ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
 
       toast({
         title: 'Message Sent!',
         description: 'We will get back to you soon.',
       });
-    } catch (error: unknown) {
+    } catch (error) {
       console.error('Failed to send message:', error);
       toast({
         title: 'Error',
