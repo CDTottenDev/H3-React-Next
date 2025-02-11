@@ -1,13 +1,7 @@
 const config = {
   darkMode: ['class'],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   prefix: '',
-  purge: ['./src/**/*.{js,ts,jsx,tsx}', './src/**/*.{html,js}'],
   theme: {
     fontFamily: {
       sans: ['var(--font-roboto)'],

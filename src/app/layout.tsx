@@ -11,7 +11,6 @@ import ThemeProviderWrapper from '@/components/theme-provider-wrapper';
 import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
 import { cn } from '@/lib/utils';
-import { languageTag } from '@/paraglide/runtime.js';
 
 const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -23,11 +22,10 @@ const roboto = Roboto({
 export const generateMetadata = (): Metadata => ({
   metadataBase: new URL(siteConfig.url()),
   title: {
-    default: siteConfig.title(),
-    template: `%s | ${siteConfig.title()}`,
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.title}`,
   },
-  description: siteConfig.description(),
-  keywords: siteConfig.keywords(),
+  description: siteConfig.description,
   robots: { index: true, follow: true },
   icons: {
     icon: '/favicon/favicon.ico',
@@ -39,28 +37,24 @@ export const generateMetadata = (): Metadata => ({
   },
   openGraph: {
     url: siteConfig.url(),
-    title: siteConfig.title(),
-    description: siteConfig.description(),
-    siteName: siteConfig.title(),
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.title,
     images: '/opengraph-image.png',
     type: 'website',
-    locale: languageTag(),
+    locale: 'en',
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.title(),
-    description: siteConfig.description(),
+    title: siteConfig.title,
+    description: siteConfig.description,
     images: '/opengraph-image.png',
   },
 });
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <html
-      lang={languageTag()}
-      suppressHydrationWarning
-      className={roboto.className}
-    >
+    <html lang="en" suppressHydrationWarning className={roboto.className}>
       <head>
         <style>{/* Critical CSS can be added here if needed */}</style>
       </head>
