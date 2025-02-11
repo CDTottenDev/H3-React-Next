@@ -51,18 +51,18 @@ export default function Hero() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 mx-auto mt-20 max-w-4xl px-4 text-center text-white dark:text-neutral-50 sm:mt-32 md:mt-40 lg:mt-48 xl:mt-56 2xl:mt-64">
+        <div className="relative mx-auto mt-20 max-w-4xl px-4 text-center text-black dark:text-neutral-50 sm:mt-32 md:mt-40 lg:mt-48 xl:mt-56 2xl:mt-64">
           <div className="relative">
-            <div className="absolute -inset-4 rounded-full bg-white/20 opacity-100 blur-xl transition-opacity duration-300 dark:bg-green-200/10 dark:opacity-100 md:opacity-0" />
-            <div className="relative z-20">
-              <h1 className="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
+            <div className="absolute -inset-4 rounded-full bg-white/45 opacity-100 blur-xl transition-opacity duration-300 dark:bg-green-200/10 dark:opacity-100 md:opacity-0" />
+            <div className="relative">
+              <h1 className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
                 Cut{' '}
                 <em className="text-5xl font-bold text-red-700 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[100px]">
                   Above
                 </em>{' '}
                 the Rest
               </h1>
-              <p className="flex flex-col items-center justify-center gap-2 text-lg text-white sm:text-xl md:flex-row md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+              <p className="flex flex-col items-center justify-center gap-2 text-lg sm:text-xl md:flex-row md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
                 <span>
                   <em className="text-2xl font-bold text-red-600 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
                     Your
@@ -80,7 +80,7 @@ export default function Hero() {
 
         {/* Before/After Images - Hidden on mobile, visible on md and up */}
         <div
-          className="relative z-10 mx-auto mt-20 hidden max-w-6xl flex-row items-center justify-center gap-4 px-4 md:flex md:gap-8"
+          className="relative mx-auto mt-20 hidden max-w-6xl flex-row items-center justify-center gap-4 px-4 md:flex md:gap-8"
           style={{ minHeight: '50vh' }}
         >
           <div className="flex flex-col gap-[4px]">
@@ -192,7 +192,7 @@ export default function Hero() {
         </div>
         {/* Contact button to contact-form link */}
         <div
-          className={`fixed right-0 top-0 z-[999] mr-20 mt-4 transition-transform duration-500 ease-in-out ${
+          className={`fixed right-0 top-0 z-10 mr-20 mt-4 transition-transform duration-500 ease-in-out md:z-[1000] ${
             scrolled &&
             'scale-80 -translate-x-[5vw] translate-y-[0.5vw] rounded-lg'
           }`}
@@ -219,7 +219,7 @@ export default function Hero() {
         </div>
 
         {isContactOpen && (
-          <div className="fixed right-0 top-0 z-50 mr-20 mt-16">
+          <div className="fixed right-0 top-0 z-[1000] mr-20 mt-16">
             <ContactForm onClose={() => setIsContactOpen(false)} />
           </div>
         )}

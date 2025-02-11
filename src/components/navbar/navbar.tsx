@@ -24,7 +24,7 @@ export const Navbar = () => {
     <header
       role="banner"
       // eslint-disable-next-line tailwindcss/enforces-negative-arbitrary-values
-      className={`fixed left-0 top-0 z-40 w-full bg-background/95 shadow-sm backdrop-blur transition-all duration-500 ease-in-out supports-[backdrop-filter]:bg-background/95 ${
+      className={`fixed left-0 top-0 z-20 w-full bg-background/95 shadow-sm backdrop-blur transition-all duration-500 ease-in-out supports-[backdrop-filter]:bg-background/95 ${
         scrolled
           ? 'w-[90%] -translate-y-[-20px] scale-x-90 rounded-lg delay-75'
           : 'w-full translate-x-0 translate-y-0 delay-0'
@@ -46,7 +46,7 @@ export const Navbar = () => {
               alt="H3 Logo"
               width={250}
               height={150}
-              className="relative z-10 h-[75px] w-auto transition-all duration-500 ease-in-out md:h-[60px]"
+              className="relative h-[75px] w-auto transition-all duration-500 ease-in-out md:h-[60px]"
               priority
               quality={75}
               fetchPriority="high"
@@ -103,7 +103,7 @@ export const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div
-          className="fixed z-[1001] w-full bg-background/95 backdrop-blur md:hidden"
+          className="fixed z-[1000] w-full bg-background/95 backdrop-blur md:hidden"
           style={{ isolation: 'isolate' }}
         >
           <nav className="flex flex-col space-y-4 p-4">

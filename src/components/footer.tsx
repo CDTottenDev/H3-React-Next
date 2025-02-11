@@ -43,7 +43,11 @@ const Footer = () => {
               {['Services', 'Projects', 'About'].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`#${item.toLowerCase()}`}
+                    href={
+                      item === 'Projects'
+                        ? '/projects'
+                        : `#${item.toLowerCase()}`
+                    }
                     className="transition-colors hover:text-blue-400"
                   >
                     {item}

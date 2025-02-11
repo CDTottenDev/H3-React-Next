@@ -11,30 +11,30 @@ interface ProjectCardProps {
 }
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group block overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg">
-      <Link href={`/projects/${project.id}`}>
-        <div className="relative h-40 w-full overflow-hidden sm:h-56">
+    <div className="group flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg dark:bg-neutral-800 lg:hover:scale-[1.03]">
+      <Link href={`/projects/${project.id}`} className="grow">
+        <div className="relative h-40 w-full overflow-hidden sm:h-56 lg:h-56 xl:h-56">
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105 lg:group-hover:scale-110"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 33vw"
           />
         </div>
-        <div className="p-3 sm:p-4">
-          <h3 className="mb-1 line-clamp-1 text-lg font-semibold text-gray-900 sm:mb-2 sm:text-xl">
+        <div className="p-3">
+          <h3 className="mb-1 line-clamp-1 text-lg font-semibold text-gray-900 dark:text-neutral-100 sm:mb-2 sm:text-xl lg:text-2xl">
             {project.title}
           </h3>
-          <p className="line-clamp-2 text-sm text-gray-600 sm:text-base">
+          <p className="line-clamp-2 text-sm text-gray-600 dark:text-neutral-300 sm:text-base lg:text-lg">
             {project.category}
           </p>
         </div>
       </Link>
-      <div className="p-3 pt-0 sm:p-4">
+      <div className="mt-auto p-3 pt-0 sm:p-4 lg:p-5">
         <Link
           href={`/projects/${project.id}`}
-          className="inline-block rounded-md bg-red-500 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-red-600 sm:px-4 sm:py-2 sm:text-sm"
+          className="inline-block w-full rounded-md bg-red-500 px-3 py-1.5 text-center text-xs font-medium text-white transition-colors hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 sm:px-4 sm:py-2 sm:text-sm lg:px-5 lg:py-2.5 lg:text-base"
         >
           Show More
         </Link>

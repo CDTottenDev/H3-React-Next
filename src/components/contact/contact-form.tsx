@@ -9,40 +9,60 @@ interface ContactFormProps {
 
 export function ContactForm({ onClose }: ContactFormProps) {
   return (
-    <div className="fixed inset-0 z-50 mt-4 bg-black/50">
-      <div className="bg-background mx-auto w-full max-w-4xl rounded-lg p-24 shadow-lg">
-        <button onClick={onClose} className="float-right">
+    <div className="fixed inset-0 z-50 bg-background/20 backdrop-blur">
+      <div className="mx-auto size-full max-w-4xl p-4 md:p-24">
+        <button
+          onClick={onClose}
+          className="float-right text-2xl text-foreground/80 hover:text-foreground hover:opacity-70"
+        >
           ×
         </button>
-        <h2 className="mb-6 text-center text-2xl font-bold">Contact Us</h2>
+        <h2 className="mb-6 text-center text-2xl font-bold text-foreground">
+          Contact Us
+        </h2>
         <form
-          className="grid gap-6 md:grid-cols-2"
+          className="flex h-[calc(100%-4rem)] flex-col gap-6 md:flex-row"
           onSubmit={(e) => e.preventDefault()}
         >
-          <div className="space-y-4 md:order-2">
-            <div>
-              <Input type="text" placeholder="Name" name="name" required />
-            </div>
-            <div>
-              <Input type="email" placeholder="Email" name="email" required />
-            </div>
-            <div>
-              <Input
-                type="tel"
-                placeholder="Phone Number"
-                name="phone"
-                required
-              />
-            </div>
-            <ContactFormClient />
-          </div>
-          <div className="md:order-1">
+          <div className="flex-1 md:order-1">
             <Textarea
               placeholder="Your message"
               name="message"
-              className="h-full min-h-[200px] md:min-h-[300px]"
+              className="h-full min-h-[200px] border-2 border-green-800/40 bg-background text-foreground focus:border-primary/50 md:min-h-[300px]"
               required
             />
+          </div>
+          <div className="flex flex-1 flex-col justify-between space-y-4 md:order-2">
+            <div className="space-y-4">
+              <div>
+                <Input
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  className="border-2 border-green-800/40 bg-background text-foreground focus:border-primary/50"
+                  required
+                />
+              </div>
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  className="border-2 border-green-800/40 bg-background text-foreground focus:border-primary/50"
+                  required
+                />
+              </div>
+              <div>
+                <Input
+                  type="tel"
+                  placeholder="Phone Number"
+                  name="phone"
+                  className="border-2 border-green-800/40 bg-background text-foreground focus:border-primary/50"
+                  required
+                />
+              </div>
+              <ContactFormClient />
+            </div>
           </div>
         </form>
       </div>

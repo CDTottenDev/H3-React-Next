@@ -32,7 +32,7 @@ export function ServicesInfo({ id }: ServicesInfoProps) {
   return (
     <section
       id={id}
-      className="scroll-mt-[15vh] bg-[#cccccc] py-20 dark:bg-gray-900"
+      className="scroll-mt-[15vh] bg-[#cccccc] py-20 dark:bg-black/65"
     >
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
