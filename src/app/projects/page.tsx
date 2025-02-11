@@ -1,169 +1,11 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import ProjectCard from './components/projectcard';
 
-const projects = [
-  {
-    id: 1,
-    title: 'Pinecrest',
-    category: 'Septic Systems',
-    dateCompleted: '2024-01-01',
-    location: 'Redmond, OR',
-    image: '/images/mobile/pinecrest/jpeg-optimizer_1.6.jpeg',
-  },
-  {
-    id: 2,
-    title: 'Cedar Code',
-    category:
-      'Excavation & EarthWork, Concrete & Flatwork, Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'La Pine, OR',
-    image: '/images/mobile/cedar-code/jpeg-optimizer_1.11.jpg',
-  },
-  {
-    id: 3,
-    title: 'Summit Site',
-    category: 'Excavation & EarthWork',
-    dateCompleted: '2024-01-01',
-    location: 'Prineville, OR',
-    image: '/images/mobile/summit-site/jpeg-optimizer_1.1.jpeg',
-  },
-  {
-    id: 4,
-    title: 'River Flow',
-    category: 'Excavation & EarthWork, Concrete & Flatwork',
-    dateCompleted: '2024-01-01',
-    location: 'Redmond, OR',
-    image: '/images/mobile/riverflow/jpeg-optimizer_1.1.jpeg',
-  },
-  {
-    id: 5,
-    title: 'Mountain Peak',
-    category:
-      'Excavation & EarthWork, Concrete & Flatwork, Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/mountain-peak/jpeg-optimizer_10.jpeg',
-  },
-  {
-    id: 6,
-    title: 'Golden Sands',
-    category: 'Excavation & EarthWork, Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/golden-sands/jpeg-optimizer_6.3.jpeg',
-  },
-  {
-    id: 7,
-    title: 'Silver Brook',
-    category: 'Excavation & EarthWork, Concrete & Flatwork',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/silver-brook/jpeg-optimizer_8.jpeg',
-  },
-  {
-    id: 8,
-    title: 'Sunrise Canyon',
-    category: 'Excavation & EarthWork, Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/sunrise-canyon/jpeg-optimizer_5.jpeg',
-  },
-  {
-    id: 9,
-    title: 'Azure Bay',
-    category:
-      'Excavation & EarthWork, Concrete & Flatwork, Custom Land Development, Septic Systems, Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/azure-bay/jpeg-optimizer_1.4.jpeg',
-  },
-  {
-    id: 10,
-    title: 'Amber Field',
-    category: 'Excavation & EarthWork, Septic Systems',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/amber-field/jpeg-optimizer_2.jpeg',
-  },
-  {
-    id: 11,
-    title: 'Cobalt Tides',
-    category: 'Excavation & EarthWork, Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/cobalt-tides/jpeg-optimizer_2.jpg',
-  },
-  {
-    id: 12,
-    title: 'Midnight Forest',
-    category: 'Excavation & EarthWork, Septic Systems',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/midnight-forest/jpeg-optimizer_7.jpeg',
-  },
-  {
-    id: 13,
-    title: 'Snow Extermination',
-    category: 'Snow & Seasonal',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/snow-removal/jpeg-optimizer_2.jpeg',
-  },
-  {
-    id: 14,
-    title: 'Frosted Meadow',
-    category: 'Excavation & EarthWork, Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/frosted-meadow/jpeg-optimizer_2.jpeg',
-  },
-  {
-    id: 15,
-    title: 'Obsidian Bluff',
-    category: 'Excavation & EarthWork, Concrete & Flatwork',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/obsidian-bluff/jpeg-optimizer_1.jpeg',
-  },
-  {
-    id: 16,
-    title: 'Fern Glade',
-    category:
-      'Excavation & EarthWork, Concrete & Flatwork, Custom Land Development, Septic Systems, Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/fern-glade/jpeg-optimizer_3.jpeg',
-  },
-  {
-    id: 17,
-    title: 'Road & Site Development',
-    category: 'Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/road-projects/jpeg-optimizer_5.1.jpeg',
-  },
-  {
-    id: 18,
-    title: 'Concrete & Flatwork',
-    category: 'Concrete & Flatwork',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/concrete-projects/jpeg-optimizer_1.jpeg',
-  },
-  {
-    id: 19,
-    title: 'Other Projects',
-    category:
-      'Excavation & EarthWork, Concrete & Flatwork, Custom Land Development, Septic Systems, Road & Site Development',
-    dateCompleted: '2024-01-01',
-    location: 'Bend, OR',
-    image: '/images/mobile/other-projects/jpeg-optimizer_17.jpg',
-  },
-];
-
+import { getProjects } from '@/lib/db';
+import { Project } from '@/types/project';
 const categories = [
   'All',
   'Excavation & EarthWork',
@@ -178,6 +20,16 @@ export default function ProjectsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  // Load projects on component mount
+  useEffect(() => {
+    async function loadProjects() {
+      const data = await getProjects();
+      setProjects(data);
+    }
+    loadProjects();
+  }, []);
 
   const filteredProjects = useMemo(
     () =>
@@ -189,7 +41,7 @@ export default function ProjectsPage() {
             (selectedCategory === 'All' ||
               project.category.split(', ').includes(selectedCategory))
         ),
-    [searchTerm, selectedCategory]
+    [searchTerm, selectedCategory, projects]
   );
 
   return (
