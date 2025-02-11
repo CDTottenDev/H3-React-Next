@@ -11,7 +11,7 @@ export const featuredProject: Project = {
   id: '1',
   title: 'Stay Safe This Winter',
   description: 'Snow removal - winter road maintenance.',
-  imageUrl: '/images/mobile/snow-removal/jpeg-optimizer_3.jpeg',
+  imageUrl: '/images/desktop/snow-removal/optimized-1.webp',
   categories: ['snow'],
-  images: ['/images/mobile/snow-removal/jpeg-optimizer_3.jpeg'],
+  images: ['/images/desktop/snow-removal/optimized-1.webp'],
 };

@@ -13,15 +13,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div
       className="mx-4 overflow-hidden rounded-lg bg-white shadow-2xl
-    transition-transform duration-300 hover:scale-105 md:mx-10 dark:bg-gray-800"
+    transition-transform duration-300 hover:scale-105 dark:bg-gray-800 md:mx-10"
     >
       <div className="flex flex-col md:flex-row">
         <div className="shrink-0 md:w-1/3">
           <Image
             src={project.imageUrl || '/placeholder.svg'}
             alt={project.title}
-            width={600}
-            height={400}
+            width={520}
+            height={390}
             className="h-48 w-full object-cover md:h-full"
             loading="lazy"
             quality={50}
@@ -32,10 +32,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="text-center text-xs font-semibold uppercase tracking-wide text-indigo-500 md:text-sm">
             Featured
           </div>
-          <h3 className="mt-1 text-center text-xl font-bold leading-tight text-gray-900 md:mt-2 md:text-2xl dark:text-white">
+          <h3 className="mt-1 text-center text-xl font-bold leading-tight text-gray-900 dark:text-white md:mt-2 md:text-2xl">
             {project.title}
           </h3>
-          <p className="mt-2 text-center text-sm text-gray-600 md:mt-4 md:text-base dark:text-white">
+          <p className="mt-2 text-center text-sm text-gray-600 dark:text-white md:mt-4 md:text-base">
             {project.description}
           </p>
           <div className="mt-4 flex justify-center md:mt-6">
@@ -50,10 +50,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
         <div className="shrink-0 md:w-1/3">
           <Image
-            src="/images/mobile/snow-removal/jpeg-optimizer_9.jpeg"
+            src="/images/desktop/snow-removal/optimized-2.webp"
             alt="Snow Removal"
-            width={600}
-            height={400}
+            width={520}
+            height={390}
             className="h-48 w-full object-cover md:h-full"
             loading="lazy"
             quality={75}

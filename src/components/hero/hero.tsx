@@ -38,7 +38,7 @@ export default function Hero() {
             fill
             priority
             quality={75}
-            className="object-cover object-center"
+            className="object-cover object-center transition-[filter] duration-500 dark:brightness-50"
             style={{
               position: 'absolute',
               top: 0,
@@ -52,79 +52,151 @@ export default function Hero() {
 
         {/* Content */}
         <div className="relative z-10 mx-auto mt-20 max-w-4xl px-4 text-center text-white dark:text-neutral-50 sm:mt-32 md:mt-40 lg:mt-48 xl:mt-56 2xl:mt-64">
-          <h1 className="mb-4 text-3xl font-bold text-black dark:text-neutral-50 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
-            Cut{' '}
-            <em className="text-5xl font-bold text-red-500 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[100px]">
-              Above
-            </em>{' '}
-            the Rest
-          </h1>
-          <p className="flex flex-col items-center justify-center gap-2 text-lg text-gray-200 dark:text-neutral-50 sm:text-xl md:flex-row md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-            <span className="text-black dark:text-neutral-50">
-              <em className="text-2xl font-bold text-red-500 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
-                Your
-              </em>{' '}
-              ground,{' '}
-              <em className="text-2xl font-bold text-red-500 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
-                Our
-              </em>{' '}
-              expertise, Endless possibilities
-            </span>
-          </p>
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-full bg-white/20 opacity-100 blur-xl transition-opacity duration-300 dark:bg-green-200/10 dark:opacity-100 md:opacity-0" />
+            <div className="relative z-20">
+              <h1 className="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
+                Cut{' '}
+                <em className="text-5xl font-bold text-red-700 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[100px]">
+                  Above
+                </em>{' '}
+                the Rest
+              </h1>
+              <p className="flex flex-col items-center justify-center gap-2 text-lg text-white sm:text-xl md:flex-row md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                <span>
+                  <em className="text-2xl font-bold text-red-600 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
+                    Your
+                  </em>{' '}
+                  ground,{' '}
+                  <em className="text-2xl font-bold text-red-600 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
+                    Our
+                  </em>{' '}
+                  expertise, Endless possibilities
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Before/After Images */}
+        {/* Before/After Images - Hidden on mobile, visible on md and up */}
         <div
           className="relative z-10 mx-auto mt-20 hidden max-w-6xl flex-row items-center justify-center gap-4 px-4 md:flex md:gap-8"
           style={{ minHeight: '50vh' }}
         >
-          <div
-            className="group relative mb-2 me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-br
-            from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
-            hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
-            style={{ aspectRatio: '16/9' }}
-          >
-            <Image
-              src="/images/home/road-before-optimized.jpeg"
-              alt="Road Before Construction"
-              width={1024}
-              height={576}
-              priority={false}
-              quality={50}
-              className="size-full object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-black/50 p-2 text-center text-white">
-              Before
+          <div className="flex flex-col gap-[4px]">
+            <div
+              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-b
+              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
+              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
+            >
+              <Image
+                src="/images/home/road-before-optimized-top.webp"
+                alt="Road Before Construction"
+                width={315}
+                height={233}
+                priority={true}
+                quality={50}
+                className="size-full object-cover"
+                loading="eager"
+              />
+            </div>
+            <div
+              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-t
+              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
+              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
+            >
+              <Image
+                src="/images/home/road-before-optimized-middle.webp"
+                alt="Road Before Construction"
+                width={315}
+                height={233}
+                priority={true}
+                quality={50}
+                className="size-full object-cover"
+                loading="eager"
+              />
+            </div>
+            <div
+              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-b
+              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
+              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
+            >
+              <Image
+                src="/images/home/road-before-optimized-bottom.webp"
+                alt="Road Before Construction"
+                width={315}
+                height={233}
+                priority={true}
+                quality={50}
+                className="size-full object-cover"
+                loading="eager"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-black/50 p-2 text-center text-white">
+                Before
+              </div>
             </div>
           </div>
-          <div
-            className="group relative mb-2 me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-bl
-            from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
-            hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
-            style={{ aspectRatio: '16/9' }}
-          >
-            <Image
-              src="/images/home/road-after-optimized.jpeg"
-              alt="Road After Construction"
-              width={1024}
-              height={576}
-              priority={false}
-              quality={75}
-              className="size-full object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-black/50 p-2 text-center text-white">
-              After
+          <div className="flex flex-col gap-[4px]">
+            <div
+              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-b
+              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
+              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
+            >
+              <Image
+                src="/images/home/road-after-optimized-top.webp"
+                alt="Road After Construction"
+                width={315}
+                height={233}
+                priority={true}
+                quality={75}
+                className="size-full object-cover"
+                loading="eager"
+              />
+            </div>
+            <div
+              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-t
+              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
+              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
+            >
+              <Image
+                src="/images/home/road-after-optimized-middle.webp"
+                alt="Road After Construction"
+                width={315}
+                height={233}
+                priority={true}
+                quality={75}
+                className="size-full object-cover"
+                loading="eager"
+              />
+            </div>
+            <div
+              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-b
+              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
+              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
+            >
+              <Image
+                src="/images/home/road-after-optimized-bottom.webp"
+                alt="Road After Construction"
+                width={315}
+                height={233}
+                priority={true}
+                quality={75}
+                className="size-full object-cover"
+                loading="eager"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-black/50 p-2 text-center text-white">
+                After
+              </div>
             </div>
           </div>
         </div>
         {/* Contact button to contact-form link */}
         <div
-          className={`fixed right-0 top-0 z-50 mr-20 mt-4 transition-transform duration-500 ease-in-out ${
+          className={`fixed right-0 top-0 z-[999] mr-20 mt-4 transition-transform duration-500 ease-in-out ${
             scrolled &&
             'scale-80 -translate-x-[5vw] translate-y-[0.5vw] rounded-lg'
           }`}
+          style={{ isolation: 'isolate' }}
         >
           <button
             type="button"

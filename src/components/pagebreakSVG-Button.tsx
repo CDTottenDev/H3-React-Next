@@ -17,7 +17,10 @@ const PageBreakSVGButton = () => {
   }, []);
 
   return (
-    <div className="position-relative z-[-1] clear-both m-0 block h-[35vh] w-full bg-[#d3d3d3] p-0 opacity-35 dark:bg-[#271d1d]">
+    <div
+      className="position-relative z-[999] clear-both m-0 block h-[45vh] w-full bg-[#d3d3d3]/35 p-0 dark:bg-[#271d1d]"
+      style={{ isolation: 'isolate' }}
+    >
       <div
         className={`absolute left-[10%] top-32 z-50 transition-opacity duration-500 sm:left-[15%] sm:top-24 md:left-1/4 md:top-32 lg:left-[20%] lg:top-28 ${showCTA ? 'opacity-100' : 'opacity-0'}`}
       >
