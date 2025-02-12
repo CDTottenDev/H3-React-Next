@@ -44,6 +44,16 @@ export default function ProjectsPage() {
     loadProjects();
   }, []);
 
+  useEffect(() => {
+    const handlePopState = () => {
+      // Force a reload when navigating back
+      window.location.reload();
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   const handleCategoryToggle = (category: string) => {
     setSelectedCategories(prev => 
       prev.includes(category)

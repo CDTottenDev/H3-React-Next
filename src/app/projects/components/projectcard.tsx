@@ -12,7 +12,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg dark:bg-neutral-800 lg:hover:scale-[1.03]">
-      <Link href={`/projects/${project.id}`} className="grow">
+      <Link 
+        href={`/projects/${project.id}`}
+        className="grow"
+        onClick={(e) => {
+          e.preventDefault();
+          window.history.pushState({}, '', `/projects/${project.id}`);
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        }}
+      >
         <div className="relative h-40 w-full overflow-hidden sm:h-56 lg:h-56 xl:h-56">
           <Image
             src={firstImage.startsWith('/images/') ? firstImage : '/images/default-project.jpg'}

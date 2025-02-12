@@ -63,7 +63,6 @@ export default function ProjectGallery() {
       <Link
         href="/projects"
         className="mb-2 inline-block text-sm text-blue-600 hover:text-blue-700 sm:mb-4 sm:text-base dark:text-blue-400 dark:hover:text-blue-300"
-        onClick={() => window.location.reload()}
       >
         &larr; Back to Projects
       </Link>
