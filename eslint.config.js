@@ -26,7 +26,10 @@ export default [
         ...globals.browser,
         ...globals.node
       },
-      parser: typescriptPlugin.parser
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+      }
     },
     rules: {
       'prettier/prettier': [

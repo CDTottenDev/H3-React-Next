@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "next build",
+    "build": "NODE_OPTIONS='--experimental-vm-modules' next build",
     "start": "next start",
     "preview": "next build && next start",
     "lint": "eslint . --cache --config eslint.config.js",
@@ -67,7 +67,7 @@
     "@typescript-eslint/parser": "^6.19.1",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "eslint-config-next": "15.1.5",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
