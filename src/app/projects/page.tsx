@@ -38,7 +38,14 @@ export default function ProjectsPage() {
         setProjects([]);
       }
     }
-    loadProjects();
+    
+    // Add this to handle route changes
+    const handleRouteChange = () => {
+      loadProjects();
+    };
+
+    window.addEventListener('popstate', handleRouteChange);
+    return () => window.removeEventListener('popstate', handleRouteChange);
   }, []);
 
   const filteredProjects = useMemo(
