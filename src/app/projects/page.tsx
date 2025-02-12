@@ -11,6 +11,7 @@ export default function ProjectsPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Get unique categories
   const categories = Array.from(new Set(projects.flatMap(p => p.category.split(', '))));
@@ -72,8 +73,31 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex px-16 dark:bg-black/85">
+      {/* Sidebar Toggle Button */}
+      <button
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        className="fixed left-0 top-1/2 -translate-y-1/2 z-50 p-2 bg-white dark:bg-gray-800 rounded-r-lg shadow-lg border border-gray-100 dark:border-gray-700 md:hidden"
+        aria-label="Toggle sidebar"
+        title="Toggle sidebar"
+      >
+        <svg
+          className="w-6 h-6 text-gray-800 dark:text-gray-200"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
       {/* Filter Sidebar */}
-      <div className="w-64 p-4 fixed bg-white dark:bg-gray-800 shadow-lg top-1/2 -translate-y-1/2 border border-gray-100 dark:border-gray-700 rounded-lg">
+      <div className={`w-64 p-4 fixed bg-white dark:bg-gray-800 shadow-lg top-1/2 -translate-y-1/2 border border-gray-100 dark:border-gray-700 rounded-lg transition-transform duration-300
+        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-[calc(100%-5px)]'} md:translate-x-0`}>
         <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">Filter by Category</h3>
         <div className="space-y-2 max-h-[calc(100vh-10rem)] overflow-y-auto">
           {categories.map(category => (
@@ -104,9 +128,9 @@ export default function ProjectsPage() {
       </div>
 
       {/* Project Cards */}
-      <div className="ml-64 flex-1 mt-28">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="flex-1 mt-28 pl-0 md:pl-64">
+        <div className="w-full px-4 py-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}

@@ -21,7 +21,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           window.dispatchEvent(new PopStateEvent('popstate'));
         }}
       >
-        <div className="relative h-40 w-full overflow-hidden sm:h-56 lg:h-56 xl:h-56">
+        <div className="relative h-32 w-full overflow-hidden sm:h-40 lg:h-40 xl:h-40">
           <Image
             src={firstImage.startsWith('/images/') ? firstImage : '/images/default-project.jpg'}
             alt={project.title}
@@ -30,19 +30,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 33vw"
           />
         </div>
-        <div className="p-3">
-          <h3 className="mb-1 line-clamp-1 text-lg font-semibold text-gray-800 dark:text-gray-100 sm:mb-2 sm:text-xl lg:text-2xl">
+        <div className="p-2">
+          <h3 className="mb-1 line-clamp-1 text-base font-semibold text-gray-800 dark:text-gray-100 sm:mb-1 sm:text-lg lg:text-xl">
             {project.title}
           </h3>
-          <p className="line-clamp-2 text-sm text-gray-600 dark:text-gray-300 sm:text-base lg:text-lg">
+          <p className="line-clamp-2 text-xs text-gray-600 dark:text-gray-300 sm:text-sm lg:text-base">
             {project.category}
           </p>
         </div>
       </Link>
-      <div className="mt-auto p-3 pt-0 sm:p-4 lg:p-5">
+      <div className="mt-auto p-2 pt-0 sm:p-3 lg:p-4">
         <Link
           href={`/projects/${project.id}`}
-          className="inline-block w-full rounded-md bg-red-600/85 px-3 py-1.5 text-center text-xs font-medium text-white transition-colors hover:bg-red-600/50 dark:bg-red-600/35 dark:hover:bg-red-600/50 sm:px-4 sm:py-2 sm:text-sm lg:px-5 lg:py-2.5 lg:text-base"
+          className="inline-block w-full rounded-md bg-red-600/85 px-3 py-1 text-center text-xs font-medium text-white transition-colors hover:bg-red-600/50 dark:bg-red-600/35 dark:hover:bg-red-600/50 sm:px-3 sm:py-1.5 sm:text-sm lg:px-4 lg:py-2 lg:text-base"
         >
           Show More
         </Link>
