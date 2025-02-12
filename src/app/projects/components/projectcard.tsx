@@ -11,7 +11,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const firstImage = project.images[0] || '/images/default-project.jpg';
 
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg dark:bg-neutral-800 lg:hover:scale-[1.03]">
+    <div className="group flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg dark:bg-gray-900 lg:hover:scale-[1.03]">
       <Link 
         href={`/projects/${project.id}`}
         className="grow"
@@ -31,10 +31,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
         </div>
         <div className="p-3">
-          <h3 className="mb-1 line-clamp-1 text-lg font-semibold text-gray-900 dark:text-neutral-100 sm:mb-2 sm:text-xl lg:text-2xl">
+          <h3 className="mb-1 line-clamp-1 text-lg font-semibold text-gray-800 dark:text-gray-100 sm:mb-2 sm:text-xl lg:text-2xl">
             {project.title}
           </h3>
-          <p className="line-clamp-2 text-sm text-gray-600 dark:text-neutral-300 sm:text-base lg:text-lg">
+          <p className="line-clamp-2 text-sm text-gray-600 dark:text-gray-300 sm:text-base lg:text-lg">
             {project.category}
           </p>
         </div>
@@ -42,7 +42,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <div className="mt-auto p-3 pt-0 sm:p-4 lg:p-5">
         <Link
           href={`/projects/${project.id}`}
-          className="inline-block w-full rounded-md bg-red-500 px-3 py-1.5 text-center text-xs font-medium text-white transition-colors hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 sm:px-4 sm:py-2 sm:text-sm lg:px-5 lg:py-2.5 lg:text-base"
+          className="inline-block w-full rounded-md bg-red-600/85 px-3 py-1.5 text-center text-xs font-medium text-white transition-colors hover:bg-red-600/50 dark:bg-red-600/35 dark:hover:bg-red-600/50 sm:px-4 sm:py-2 sm:text-sm lg:px-5 lg:py-2.5 lg:text-base"
         >
           Show More
         </Link>

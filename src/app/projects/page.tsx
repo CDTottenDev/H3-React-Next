@@ -71,21 +71,21 @@ export default function ProjectsPage() {
   }
 
   return (
-    <div className="flex px-16">
+    <div className="flex px-16 dark:bg-black/85">
       {/* Filter Sidebar */}
-      <div className="w-64 p-4 fixed bg-gray-200 shadow-lg top-1/2 -translate-y-1/2">
-        <h3 className="text-lg font-semibold mb-4">Filter by Category</h3>
+      <div className="w-64 p-4 fixed bg-white dark:bg-gray-800 shadow-lg top-1/2 -translate-y-1/2 border border-gray-100 dark:border-gray-700 rounded-lg">
+        <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">Filter by Category</h3>
         <div className="space-y-2 max-h-[calc(100vh-10rem)] overflow-y-auto">
           {categories.map(category => (
             <div 
               key={category}
-              className="flex items-center space-x-2 cursor-pointer"
+              className="flex items-center space-x-2 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 px-2 py-1 rounded-md transition-colors"
               onClick={() => handleCategoryToggle(category)}
             >
               <div className={`h-5 w-5 rounded-full border-2 transition-all duration-200
                 ${selectedCategories.includes(category) 
-                  ? 'border-red-600 bg-red-600 shadow-inner' 
-                  : 'border-gray-300 bg-white hover:border-red-400'}
+                  ? 'border-teal-600 dark:border-teal-500 bg-teal-600 dark:bg-teal-500 shadow-inner' 
+                  : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 hover:border-teal-400 dark:hover:border-teal-300'}
               `}>
                 {selectedCategories.includes(category) && (
                   <svg 
@@ -97,7 +97,7 @@ export default function ProjectsPage() {
                   </svg>
                 )}
               </div>
-              <span className="select-none">{category}</span>
+              <span className="select-none text-gray-700 dark:text-gray-200">{category}</span>
             </div>
           ))}
         </div>
