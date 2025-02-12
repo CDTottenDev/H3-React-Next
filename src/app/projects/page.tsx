@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { ProjectCard } from './components/projectcard';
 import { getProjects } from '@/lib/db';
+import { Project } from '@/types/project';
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
