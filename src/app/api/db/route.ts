@@ -12,18 +12,22 @@ interface Database {
 
 async function readDB(): Promise<Database> {
   try {
+    console.log('Reading DB from:', DB_PATH);
     const data = await fs.readFile(DB_PATH, 'utf-8');
     return JSON.parse(data);
-  } catch {
+  } catch (err) {
+    console.error('Error reading DB:', err);
     return { projects: [] };
   }
 }
 
 export async function GET(request: Request) {
+  console.log('API request received');
   const { searchParams } = new URL(request.url);
   const id = searchParams.get('id');
 
   const db = await readDB();
+  console.log('Projects in DB:', db.projects.length);
 
   if (id) {
     const project = db.projects.find((p) => p.id === parseInt(id));
