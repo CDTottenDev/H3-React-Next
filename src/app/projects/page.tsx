@@ -14,6 +14,7 @@ export default function ProjectsPage() {
     async function loadProjects() {
       try {
         const data = await getProjects();
+        console.log('Loaded projects:', data);
         setProjects(data);
       } catch (err) {
         console.error('Failed to load projects:', err);
