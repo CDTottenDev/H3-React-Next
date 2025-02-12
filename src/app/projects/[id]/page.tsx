@@ -44,7 +44,7 @@ export default function ProjectGallery() {
           href="/projects"
           className="mb-4 inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
         >
-          &larr; Back to Projects
+          Back to Projects
         </Link>
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-50">
