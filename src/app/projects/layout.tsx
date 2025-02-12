@@ -16,7 +16,9 @@ export default function ProjectsLayout({
 }) {
   return (
     <div className={`min-h-screen bg-gray-100 ${inter.className}`}>
-      {children}
+      <div className="relative">
+        {children}
+      </div>
     </div>
   );
 }

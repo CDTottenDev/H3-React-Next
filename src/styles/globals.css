@@ -96,3 +96,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this at the end of your global CSS file */
+img {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  transform: translateZ(0);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+}

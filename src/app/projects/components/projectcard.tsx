@@ -8,7 +8,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  const firstImage = project.images?.[0] || '/images/default-project.jpg';
+  const firstImage = project.images[0] || '/images/default-project.jpg';
 
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg dark:bg-neutral-800 lg:hover:scale-[1.03]">
@@ -27,7 +27,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </h3>
           <p className="line-clamp-2 text-sm text-gray-600 dark:text-neutral-300 sm:text-base lg:text-lg">
-            {project.category || 'Uncategorized'}
+            {project.category}
           </p>
         </div>
       </Link>
