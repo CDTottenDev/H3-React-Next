@@ -4,9 +4,21 @@
         "id": 1,
         "title": "Pinecrest",
         "category": "Septic Systems",
+        "description": "Project description",
         "dateCompleted": "2024-01-01",
         "location": "Redmond, OR",
-        "image": "/images/mobile/pinecrest/jpeg-optimizer_1.6.jpeg"
+        "images": [
+            "/images/desktop/pinecrest/jpeg-optimizer_1.1.jpeg",
+            "/images/desktop/pinecrest/jpeg-optimizer_1.2.jpeg",
+            "/images/desktop/pinecrest/jpeg-optimizer_1.3.jpeg",
+            "/images/desktop/pinecrest/jpeg-optimizer_1.4.jpeg",
+            "/images/desktop/pinecrest/jpeg-optimizer_1.5.jpeg",
+            "/images/desktop/pinecrest/jpeg-optimizer_1.6.jpeg",
+            "/images/desktop/pinecrest/jpeg-optimizer_1.7.jpeg",
+            "/images/desktop/pinecrest/jpeg-optimizer_1.8.jpeg",
+            "/images/desktop/pinecrest/jpeg-optimizer_1.9.jpeg",
+            "/images/desktop/pinecrest/jpeg-optimizer_1.65.jpeg"
+        ]
     },
     {
         "id": 2,
@@ -14,7 +26,22 @@
         "category": "Excavation & EarthWork, Concrete & Flatwork, Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "La Pine, OR",
-        "image": "/images/mobile/cedar-code/jpeg-optimizer_1.11.jpg"
+        "images": [
+            "/images/desktop/cedar-code/jpeg-optimizer_1.1.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.2.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.3.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.4.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.5.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.6.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.7.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.8.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.9.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.10.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.11.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_1.75.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_2.jpeg",
+            "/images/desktop/cedar-code/jpeg-optimizer_3.jpeg"
+        ]
     },
     {
         "id": 3,
@@ -22,7 +49,12 @@
         "category": "Excavation & EarthWork",
         "dateCompleted": "2024-01-01",
         "location": "Prineville, OR",
-        "image": "/images/mobile/summit-site/jpeg-optimizer_1.1.jpeg"
+        "images": [
+            "/images/desktop/summit-site/jpeg-optimizer_1.1.jpeg",
+            "/images/desktop/summit-site/jpeg-optimizer_1.2.jpeg",
+            "/images/desktop/summit-site/jpeg-optimizer_1.3.jpeg",
+            "/images/desktop/summit-site/jpeg-optimizer_1.4.jpeg"
+        ]
     },
     {
         "id": 4,
@@ -30,7 +62,13 @@
         "category": "Excavation & EarthWork, Concrete & Flatwork",
         "dateCompleted": "2024-01-01",
         "location": "Redmond, OR",
-        "image": "/images/mobile/riverflow/jpeg-optimizer_1.1.jpeg"
+        "images": [
+            "/images/desktop/riverflow/jpeg-optimizer_1.1.jpeg",
+            "/images/desktop/riverflow/jpeg-optimizer_1.2.jpeg",
+            "/images/desktop/riverflow/jpeg-optimizer_1.3.jpeg",
+            "/images/desktop/riverflow/jpeg-optimizer_1.4.jpeg",
+            "/images/desktop/riverflow/jpeg-optimizer_1.5.jpeg"
+        ]
     },
     {
         "id": 5,
@@ -38,7 +76,19 @@
         "category": "Excavation & EarthWork, Concrete & Flatwork, Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/mountain-peak/jpeg-optimizer_10.jpeg"
+        "images": [
+            "/images/desktop/mountain-peak/jpeg-optimizer_1.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_2.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_3.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_4.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_5.8.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_5.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_6.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_7.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_9.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_10.jpeg",
+            "/images/desktop/mountain-peak/jpeg-optimizer_11.jpeg"
+        ]
     },
     {
         "id": 6,
@@ -46,7 +96,11 @@
         "category": "Excavation & EarthWork, Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/golden-sands/jpeg-optimizer_6.3.jpeg"
+        "images": [
+            "/images/desktop/golden-sands/jpeg-optimizer_1.jpeg",
+            "/images/desktop/golden-sands/jpeg-optimizer_2.jpeg",
+            "/images/desktop/golden-sands/jpeg-optimizer_6.3.jpeg"
+        ]
     },
     {
         "id": 7,
@@ -54,7 +108,16 @@
         "category": "Excavation & EarthWork, Concrete & Flatwork",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/silver-brook/jpeg-optimizer_8.jpeg"
+        "images": [
+            "/images/desktop/silver-brook/jpeg-optimizer_1.jpeg",
+            "/images/desktop/silver-brook/jpeg-optimizer_2.jpeg",
+            "/images/desktop/silver-brook/jpeg-optimizer_3.jpeg",
+            "/images/desktop/silver-brook/jpeg-optimizer_4.jpeg",
+            "/images/desktop/silver-brook/jpeg-optimizer_5.jpeg",
+            "/images/desktop/silver-brook/jpeg-optimizer_6.jpeg",
+            "/images/desktop/silver-brook/jpeg-optimizer_7.jpeg",
+            "/images/desktop/silver-brook/jpeg-optimizer_8.jpeg"
+        ]
     },
     {
         "id": 8,
@@ -62,7 +125,14 @@
         "category": "Excavation & EarthWork, Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/sunrise-canyon/jpeg-optimizer_5.jpeg"
+        "images": [
+            "/images/desktop/sunrise-canyon/jpeg-optimizer_1.jpeg",
+            "/images/desktop/sunrise-canyon/jpeg-optimizer_2.jpeg",
+            "/images/desktop/sunrise-canyon/jpeg-optimizer_3.jpeg",
+            "/images/desktop/sunrise-canyon/jpeg-optimizer_4.jpeg",
+            "/images/desktop/sunrise-canyon/jpeg-optimizer_5.jpeg",
+            "/images/desktop/sunrise-canyon/jpeg-optimizer_6.jpeg"
+        ]
     },
     {
         "id": 9,
@@ -70,7 +140,22 @@
         "category": "Excavation & EarthWork, Concrete & Flatwork, Custom Land Development, Septic Systems, Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/azure-bay/jpeg-optimizer_1.4.jpeg"
+        "images": [
+            "/images/desktop/azure-bay/jpeg-optimizer_1.1.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_1.2.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_1.3.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_1.4.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_1.5.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_1.6.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_7.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_8.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_9.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_10.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_11.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_12.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_13.jpeg",
+            "/images/desktop/azure-bay/jpeg-optimizer_14.jpeg"
+        ]
     },
     {
         "id": 10,
@@ -78,7 +163,13 @@
         "category": "Excavation & EarthWork, Septic Systems",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/amber-field/jpeg-optimizer_2.jpeg"
+        "images": [
+            "/images/desktop/amber-field/jpeg-optimizer_1.jpeg",
+            "/images/desktop/amber-field/jpeg-optimizer_2.jpeg",
+            "/images/desktop/amber-field/jpeg-optimizer_3.jpeg",
+            "/images/desktop/amber-field/jpeg-optimizer_5.jpeg",
+            "/images/desktop/amber-field/jpeg-optimizer_6.jpeg"
+        ]
     },
     {
         "id": 11,
@@ -86,7 +177,10 @@
         "category": "Excavation & EarthWork, Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/cobalt-tides/jpeg-optimizer_2.jpg"
+        "images": [
+            "/images/desktop/cobalt-tides/jpeg-optimizer_1.jpeg",
+            "/images/desktop/cobalt-tides/jpeg-optimizer_2.jpeg"
+        ]
     },
     {
         "id": 12,
@@ -94,7 +188,16 @@
         "category": "Excavation & EarthWork, Septic Systems",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/midnight-forest/jpeg-optimizer_7.jpeg"
+        "images": [
+            "/images/desktop/midnight-forest/jpeg-optimizer_1.jpeg",
+            "/images/desktop/midnight-forest/jpeg-optimizer_2.jpeg",
+            "/images/desktop/midnight-forest/jpeg-optimizer_3.jpeg",
+            "/images/desktop/midnight-forest/jpeg-optimizer_4.jpeg",
+            "/images/desktop/midnight-forest/jpeg-optimizer_5.jpeg",
+            "/images/desktop/midnight-forest/jpeg-optimizer_6.jpeg",
+            "/images/desktop/midnight-forest/jpeg-optimizer_7.jpeg",
+            "/images/desktop/midnight-forest/jpeg-optimizer_8.jpeg"
+        ]
     },
     {
         "id": 13,
@@ -102,7 +205,17 @@
         "category": "Snow & Seasonal",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/snow-removal/jpeg-optimizer_2.jpeg"
+        "images": [
+            "/images/desktop/snow-removal/jpeg-optimizer_1.jpeg",
+            "/images/desktop/snow-removal/jpeg-optimizer_2.jpeg",
+            "/images/desktop/snow-removal/jpeg-optimizer_3.jpeg",
+            "/images/desktop/snow-removal/jpeg-optimizer_4.jpeg",
+            "/images/desktop/snow-removal/jpeg-optimizer_5.jpeg",
+            "/images/desktop/snow-removal/jpeg-optimizer_6.jpeg",
+            "/images/desktop/snow-removal/jpeg-optimizer_7.jpeg",
+            "/images/desktop/snow-removal/jpeg-optimizer_8.jpeg",
+            "/images/desktop/snow-removal/jpeg-optimizer_9.jpeg"
+        ]
     },
     {
         "id": 14,
@@ -110,7 +223,10 @@
         "category": "Excavation & EarthWork, Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/frosted-meadow/jpeg-optimizer_2.jpeg"
+        "images": [
+            "/images/desktop/frosted-meadow/jpeg-optimizer_1.jpeg",
+            "/images/desktop/frosted-meadow/jpeg-optimizer_2.jpeg"
+        ]
     },
     {
         "id": 15,
@@ -118,7 +234,12 @@
         "category": "Excavation & EarthWork, Concrete & Flatwork",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/obsidian-bluff/jpeg-optimizer_1.jpeg"
+        "images": [
+            "/images/desktop/obsidian-bluff/jpeg-optimizer_1.jpeg",
+            "/images/desktop/obsidian-bluff/jpeg-optimizer_2.jpeg",
+            "/images/desktop/obsidian-bluff/jpeg-optimizer_3.jpeg",
+            "/images/desktop/obsidian-bluff/jpeg-optimizer_4.jpeg"
+        ]
     },
     {
         "id": 16,
@@ -126,7 +247,11 @@
         "category": "Excavation & EarthWork, Concrete & Flatwork, Custom Land Development, Septic Systems, Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/fern-glade/jpeg-optimizer_3.jpeg"
+        "images": [
+            "/images/desktop/fern-glade/jpeg-optimizer_1.jpeg",
+            "/images/desktop/fern-glade/jpeg-optimizer_2.jpeg",
+            "/images/desktop/fern-glade/jpeg-optimizer_3.jpeg"
+        ]
     },
     {
         "id": 17,
@@ -134,7 +259,21 @@
         "category": "Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/road-projects/jpeg-optimizer_5.1.jpeg"
+        "images": [
+            "/images/desktop/road-projects/jpeg-optimizer_1.8.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_1.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_2.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_3.1.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_3.2.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_3.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_4.1.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_4.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_5.1.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_5.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_6.1.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_6.jpeg",
+            "/images/desktop/road-projects/jpeg-optimizer_7.jpeg"
+        ]
     },
     {
         "id": 18,
@@ -142,7 +281,19 @@
         "category": "Concrete & Flatwork",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/concrete-projects/jpeg-optimizer_1.jpeg"
+        "images": [
+            "/images/desktop/concrete-projects/jpeg-optimizer_1.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_2.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_5.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_14.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_15.1.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_15.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_18.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_19.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_20.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_22.jpeg",
+            "/images/desktop/concrete-projects/jpeg-optimizer_23.jpeg"
+        ]
     },
     {
         "id": 19,
@@ -150,7 +301,24 @@
         "category": "Excavation & EarthWork, Concrete & Flatwork, Custom Land Development, Septic Systems, Road & Site Development",
         "dateCompleted": "2024-01-01",
         "location": "Bend, OR",
-        "image": "/images/mobile/other-projects/jpeg-optimizer_17.jpg"
+        "images": [
+            "/images/desktop/other-projects/jpeg-optimizer_2.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_6.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_7.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_9.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_10.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_11.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_12.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_13.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_16.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_17.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_21.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_24.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_25.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_26.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_27.jpeg",
+            "/images/desktop/other-projects/jpeg-optimizer_28.jpeg"
+        ]
     }
   ]
 }

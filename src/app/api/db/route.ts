@@ -27,7 +27,17 @@ export async function GET(request: Request) {
 
   if (id) {
     const project = db.projects.find((p) => p.id === parseInt(id));
-    return NextResponse.json(project || null);
+    if (project) {
+      // Validate and filter images
+      const validImages = project.images
+        ?.filter(img => typeof img === 'string' && img.startsWith('/images/'))
+        .map(img => img.replace(/\\/g, '/')) || [];
+      return NextResponse.json({
+        ...project,
+        images: validImages
+      });
+    }
+    return NextResponse.json(null);
   }
 
   return NextResponse.json(db.projects);

@@ -25,8 +25,18 @@ export default function ProjectsPage() {
   // Load projects on component mount
   useEffect(() => {
     async function loadProjects() {
-      const data = await getProjects();
-      setProjects(data);
+      try {
+        const data = await getProjects();
+        // Ensure all projects have valid images
+        const validatedProjects = data.map(project => ({
+          ...project,
+          images: project.images.map(img => img.startsWith('/images/') ? img : '/images/default-project.jpg')
+        }));
+        setProjects(validatedProjects);
+      } catch (error) {
+        console.error('Error loading projects:', error);
+        setProjects([]);
+      }
     }
     loadProjects();
   }, []);

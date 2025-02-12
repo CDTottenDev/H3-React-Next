@@ -5,6 +5,5 @@ export interface Project {
   description: string;
   dateCompleted: string;
   location: string;
-  image: string;
   images: string[];
 }

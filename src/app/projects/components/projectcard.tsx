@@ -1,21 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Project } from '@/types/project';
+
 interface ProjectCardProps {
-  project: {
-    id: number;
-    title: string;
-    image: string;
-    category: string;
-  };
+  project: Project;
 }
+
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const firstImage = project.images[0] || '/images/default-project.jpg';
+
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg dark:bg-neutral-800 lg:hover:scale-[1.03]">
       <Link href={`/projects/${project.id}`} className="grow">
         <div className="relative h-40 w-full overflow-hidden sm:h-56 lg:h-56 xl:h-56">
           <Image
-            src={project.image}
+            src={firstImage.startsWith('/images/') ? firstImage : '/images/default-project.jpg'}
             alt={project.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105 lg:group-hover:scale-110"
