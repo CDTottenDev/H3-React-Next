@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { ContactFormEmail } from '@/components/emails/contact-form-email';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -18,31 +19,23 @@ export async function POST(request: Request) {
       from: 'H3 Construction <contact@h3excavationandconst.com>',
       to: [process.env.RESEND_TO_EMAIL || 'cdtottendev@gmail.com'],
       subject: 'New Contact Form Submission',
-      html: `
-        <h1>New Contact Request</h1>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-        <hr>
-        <p>Sent from H3 Construction website</p>
-      `
+      react: ContactFormEmail({ name, email, phone, message }),
     });
 
     if (error) {
-      console.error('Resend error:', error);
+      console.error('Resend error details:', error);
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: 'Failed to send email', details: error },
         { status: 500 }
       );
     }
 
-    return NextResponse.json({ success: true });
+    console.log('Email sent successfully:', data);
+    return NextResponse.json({ success: true, data });
   } catch (error) {
-    console.error('Server error:', error);
+    console.error('Server error details:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }

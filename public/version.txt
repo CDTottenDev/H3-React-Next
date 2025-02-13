@@ -1,2 +1,1 @@
-# Create file with current timestamp (run this once manually)
-echo $(date +%s) > public/version.txt
+$(date +%s)  

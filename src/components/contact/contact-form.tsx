@@ -23,14 +23,6 @@ export function ContactForm({ onClose }: ContactFormProps) {
         </h2>
         <form 
           className="flex h-[calc(100%-4rem)] flex-col gap-6 md:flex-row"
-          onSubmit={(e) => {
-            e.preventDefault();
-            const form = e.currentTarget;
-            const button = form.querySelector('button[type="submit"]');
-            if (button) {
-              button.dispatchEvent(new Event('click'));
-            }
-          }}
         >
           <div className="flex-1 md:order-1">
             <Textarea
