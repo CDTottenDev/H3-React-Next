@@ -63,6 +63,13 @@ export function ContactForm({ onClose }: ContactFormProps) {
               </div>
               <ContactFormClient />
             </div>
+            <span className="text-sm text-center text-foreground/80">
+              We will get back to you as soon as possible.
+            </span>
+            <span className="text-sm text-center font-semibold bg-green-800/10 px-2 py-1 rounded-md text-green-800 dark:text-green-400 dark:bg-green-800/20">
+              541-419-8077
+              <br />Chance Hyser
+            </span>
           </div>
         </form>
       </div>
