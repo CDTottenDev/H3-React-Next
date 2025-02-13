@@ -106,3 +106,21 @@ img {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: pixelated;
 }
+
+/* Add custom toast styles */
+.Toastify__toast--success {
+  background-color: #f0fdf4 !important;
+  color: #166534 !important;
+  border: 1px solid #bbf7d0;
+}
+
+.Toastify__toast--error {
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fecaca;
+}
+
+.Toastify__close-button {
+  color: inherit !important;
+  opacity: 0.75;
+}

@@ -14,34 +14,39 @@ export function ContactFormClient() {
     setIsSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
-    const data = Object.fromEntries(formData);
-
+    
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(Object.fromEntries(formData)),
       });
 
+      const result = await response.json();
+      
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        throw new Error(result.error || 'Failed to send message');
       }
 
       toast({
-        title: 'Message Sent!',
+        title: '✅ Message Sent!',
         description: 'We will get back to you soon.',
+        className: 'bg-green-50 text-green-800 border-green-100',
       });
       
       // Reset form after successful submission
-      event.currentTarget.reset();
+      if (event.currentTarget) {
+        event.currentTarget.reset();
+      }
     } catch (error) {
-      console.error('Failed to send message:', error);
+      console.error('Submission error:', error);
       toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again later.',
+        title: '❌ Error',
+        description: error instanceof Error ? error.message : 'Failed to send message',
         variant: 'destructive',
+        className: 'bg-red-50 text-red-800 border-red-100',
       });
     } finally {
       setIsSubmitting(false);
@@ -54,7 +59,7 @@ export function ContactFormClient() {
       className="w-full"
       disabled={isSubmitting}
     >
-      {isSubmitting ? 'Sending...' : 'Send'}
+      {isSubmitting ? 'Sending...' : 'Send Message'}
     </Button>
   );
 }
