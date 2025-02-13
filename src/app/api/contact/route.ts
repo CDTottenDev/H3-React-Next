@@ -7,12 +7,13 @@ export async function POST(request: Request) {
   const data = await request.json();
   
   try {
-    const emailResponse = await resend.emails.send({
-      from: 'H3 Construction <onboarding@resend.dev>',
+    console.log('Attempting to send email with data:', data);
+    
+    const { data: emailResponse, error } = await resend.emails.send({
+      from: 'H3 Construction <contact@h3construction.com>',
       to: ['h3excavationandconst@gmail.com'],
       subject: 'New Contact Form Submission',
-      html: `
-        <h1>New Contact Form Submission</h1>
+      html: `        <h1>New Contact Form Submission</h1>
         <p><strong>Name:</strong> ${data.name}</p>
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Phone:</strong> ${data.phone}</p>
@@ -22,8 +23,11 @@ export async function POST(request: Request) {
       `
     });
 
-    if (emailResponse.error) {
-      throw new Error(emailResponse.error.message);
+    console.log('Email API response:', { emailResponse, error });
+
+    if (error) {
+      console.error('Resend API error:', error);
+      throw new Error(error.message);
     }
 
     return NextResponse.json({ success: true });
@@ -35,3 +39,4 @@ export async function POST(request: Request) {
     );
   }
 }
+
