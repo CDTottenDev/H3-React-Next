@@ -17,7 +17,7 @@ export function ContactFormClient() {
     const data = Object.fromEntries(formData);
 
     try {
-      await fetch('/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,10 +25,17 @@ export function ContactFormClient() {
         body: JSON.stringify(data),
       });
 
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       toast({
         title: 'Message Sent!',
         description: 'We will get back to you soon.',
       });
+      
+      // Reset form after successful submission
+      event.currentTarget.reset();
     } catch (error) {
       console.error('Failed to send message:', error);
       toast({
@@ -49,8 +56,7 @@ export function ContactFormClient() {
       onClick={(e) => {
         e.preventDefault();
         const form = e.currentTarget.closest('form');
-        if (form)
-          handleSubmit(form as unknown as React.FormEvent<HTMLFormElement>);
+        if (form) handleSubmit(form as unknown as React.FormEvent<HTMLFormElement>);
       }}
     >
       {isSubmitting ? 'Sending...' : 'Send'}
