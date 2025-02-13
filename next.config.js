@@ -17,11 +17,20 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/_next/static/(.*)',
         headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
           },
         ],
       },
@@ -30,6 +39,9 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_APP_URL:
       process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+  },
+  generateBuildId: async () => {
+    return String(Date.now()); // Unique build ID based on timestamp
   },
 };
 

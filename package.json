@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "NODE_OPTIONS='--experimental-vm-modules' next build",
+    "build": "echo $(date +%s) > public/version.txt && next build",
     "start": "next start",
     "preview": "next build && next start",
     "lint": "eslint . --cache --config eslint.config.js",

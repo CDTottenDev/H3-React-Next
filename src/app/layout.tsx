@@ -11,6 +11,7 @@ import ThemeProviderWrapper from '@/components/theme-provider-wrapper';
 import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
 import { cn } from '@/lib/utils';
+import { VersionChecker } from '@/components/version-checker';
 
 const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -70,6 +71,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
               <Navbar />
               {children}
               <Toaster />
+              <VersionChecker />
             </>
           </ThemeProviderWrapper>
         </Suspense>
