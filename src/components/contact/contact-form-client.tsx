@@ -53,11 +53,6 @@ export function ContactFormClient() {
       type="submit"
       className="w-full"
       disabled={isSubmitting}
-      onClick={(e) => {
-        e.preventDefault();
-        const form = e.currentTarget.closest('form');
-        if (form) handleSubmit(form as unknown as React.FormEvent<HTMLFormElement>);
-      }}
     >
       {isSubmitting ? 'Sending...' : 'Send'}
     </Button>
