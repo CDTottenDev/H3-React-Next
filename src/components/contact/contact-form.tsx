@@ -22,6 +22,8 @@ export function ContactForm({ onClose }: ContactFormProps) {
           Get in Touch
         </h2>
         <form 
+          action="https://formspree.io/f/xnnqyngz" 
+          method="POST"
           className="flex h-[calc(100%-4rem)] flex-col gap-6 md:flex-row"
         >
           <div className="flex-1 md:order-1">
@@ -68,7 +70,7 @@ export function ContactForm({ onClose }: ContactFormProps) {
             </div>
             <div className="space-y-2">
               <p className="text-center text-sm text-muted-foreground">
-                We typically respond within 1 business day
+                We will respond as soon as possible.
               </p>
               <div className="text-center text-sm font-medium text-green-800 dark:text-green-200">
                 <p>Or call directly:</p>
