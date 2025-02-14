@@ -12,6 +12,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
 import { cn } from '@/lib/utils';
 import { VersionChecker } from '@/components/version-checker';
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -72,6 +73,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
               {children}
               <Toaster />
               <VersionChecker />
+              <Analytics />
             </>
           </ThemeProviderWrapper>
         </Suspense>
