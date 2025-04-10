@@ -5,7 +5,6 @@ import Footer from '@/components/footer';
 import DevFooter from '@/components/footer-dev';
 import Hero from '@/components/hero/hero';
 import PageBreak from '@/components/pagebreak';
-import PageBreakSVGButton from '@/components/pagebreakSVG-Button';
 import { ServicesInfo } from '@/components/services/servicesinfo';
 import Testimonials from '@/components/testimonials/testimonials';
 
@@ -14,7 +13,6 @@ export default async function Home() {
     <section>
       <BackgroundLogo />
       <Hero />
-      <PageBreakSVGButton />
       <ServicesInfo id="services" />
       <PageBreak />
       <FeaturedProjects />

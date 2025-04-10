@@ -90,44 +90,12 @@ export default function Hero() {
               hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
             >
               <Image
-                src="/images/home/road-before-optimized-top.webp"
+                src="/images/home/road-before-optimized.jpeg"
                 alt="Road Before Construction"
                 width={315}
                 height={233}
                 priority={true}
-                quality={50}
-                className="size-full object-cover"
-                loading="eager"
-              />
-            </div>
-            <div
-              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-t
-              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
-              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
-            >
-              <Image
-                src="/images/home/road-before-optimized-middle.webp"
-                alt="Road Before Construction"
-                width={315}
-                height={233}
-                priority={true}
-                quality={50}
-                className="size-full object-cover"
-                loading="eager"
-              />
-            </div>
-            <div
-              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-b
-              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
-              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
-            >
-              <Image
-                src="/images/home/road-before-optimized-bottom.webp"
-                alt="Road Before Construction"
-                width={315}
-                height={233}
-                priority={true}
-                quality={50}
+                quality={70}
                 className="size-full object-cover"
                 loading="eager"
               />
@@ -143,44 +111,12 @@ export default function Hero() {
               hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
             >
               <Image
-                src="/images/home/road-after-optimized-top.webp"
+                src="/images/home/road-after-optimized.jpeg"
                 alt="Road After Construction"
                 width={315}
                 height={233}
                 priority={true}
-                quality={75}
-                className="size-full object-cover"
-                loading="eager"
-              />
-            </div>
-            <div
-              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-t
-              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
-              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
-            >
-              <Image
-                src="/images/home/road-after-optimized-middle.webp"
-                alt="Road After Construction"
-                width={315}
-                height={233}
-                priority={true}
-                quality={75}
-                className="size-full object-cover"
-                loading="eager"
-              />
-            </div>
-            <div
-              className="group relative me-2 inline-flex w-full items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-gradient-to-b
-              from-[#000000] via-red-800 to-green-400 p-0.5 text-sm font-medium text-gray-900 shadow-xl transition-transform 
-              hover:scale-105 focus:outline-none dark:border-white dark:text-white dark:hover:text-gray-900 dark:focus:ring-red-400 md:w-auto"
-            >
-              <Image
-                src="/images/home/road-after-optimized-bottom.webp"
-                alt="Road After Construction"
-                width={315}
-                height={233}
-                priority={true}
-                quality={75}
+                quality={70}
                 className="size-full object-cover"
                 loading="eager"
               />
