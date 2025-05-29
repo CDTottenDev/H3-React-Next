@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import { PropsWithChildren, Suspense } from 'react';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
+import Script from 'next/script';
 
 import Loading from './loading';
 
@@ -21,6 +22,101 @@ const roboto = Roboto({
   variable: '--font-roboto',
 });
 
+// JSON-LD structured data
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "H3 Excavation & Construction",
+  "image": "/images/home/logo favicon icon.png",
+  "url": siteConfig.url(),
+  "telephone": "+1-541-XXX-XXXX",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Your Street Address",
+    "addressLocality": "Bend",
+    "addressRegion": "OR",
+    "postalCode": "97701",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "44.0582",
+    "longitude": "-121.3153"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "07:00",
+    "closes": "17:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/h3excavation",
+    "https://www.linkedin.com/company/h3excavation"
+  ],
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "44.0582",
+      "longitude": "-121.3153"
+    },
+    "geoRadius": "50000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Excavation and Construction Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Residential Excavation",
+          "description": "Custom home site preparation and excavation services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial Excavation",
+          "description": "Commercial site preparation and excavation services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Utility Trenching",
+          "description": "Professional utility trenching services for water, sewer, and electrical lines"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Septic Systems",
+          "description": "DEQ certified septic system installation and repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Land Development",
+          "description": "Complete land development and site preparation services"
+        }
+      }
+    ]
+  }
+};
+
 export const generateMetadata = (): Metadata => ({
   metadataBase: new URL(siteConfig.url()),
   title: {
@@ -28,6 +124,7 @@ export const generateMetadata = (): Metadata => ({
     template: `%s | ${siteConfig.title}`,
   },
   description: siteConfig.description,
+  keywords: siteConfig.keywords(),
   robots: { index: true, follow: true },
   icons: {
     icon: '/images/home/logo favicon icon.png',
@@ -59,6 +156,11 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     <html lang="en" suppressHydrationWarning className={roboto.className}>
       <head>
         <style>{/* Critical CSS can be added here if needed */}</style>
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body
         className={cn(

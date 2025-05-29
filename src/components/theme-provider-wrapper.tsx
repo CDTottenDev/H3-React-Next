@@ -9,7 +9,7 @@ const LazyThemeProvider = dynamic<ComponentProps<typeof ThemeProvider>>(
   () => import('./theme-provider').then((mod) => mod.ThemeProvider),
   {
     ssr: false,
-    loading: () => <div>Loading theme...</div>,
+    loading: () => <div>Central Oregon's Best Personalized Excavation and Construction Company! At H3 we are dedicated to getting the job done right the first time.</div>,
   }
 );
 
