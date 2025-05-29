@@ -3,13 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type { Project } from './feat-proj';
 
-interface ProjectCardProps {
-  project: Project;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC = () => {
   return (
     <div
       className="mx-4 overflow-hidden rounded-lg bg-white shadow-2xl
@@ -18,8 +13,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="flex flex-col md:flex-row">
         <div className="shrink-0 md:w-1/3">
           <Image
-            src={project.imageUrl || '/placeholder.svg'}
-            alt={project.title}
+            src="/images/desktop/job-1/jpeg-optimizer_474.jpeg"
+            alt="Fence Installation"
             width={520}
             height={390}
             className="h-48 w-full object-cover md:h-full"
@@ -33,10 +28,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             Featured
           </div>
           <h3 className="mt-1 text-center text-xl font-bold leading-tight text-gray-900 dark:text-white md:mt-2 md:text-2xl">
-            {project.title}
+            Fence Installation
           </h3>
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-white md:mt-4 md:text-base">
-            {project.description}
+            Fence installation - residential and commercial.
           </p>
           <div className="mt-4 flex justify-center md:mt-6">
             <Link
@@ -50,8 +45,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
         <div className="shrink-0 md:w-1/3">
           <Image
-            src="/images/desktop/snow-removal/optimized-2.webp"
-            alt="Snow Removal"
+            src="/images/desktop/job-1/jpeg-optimizer_477.jpeg"
+            alt="Fence Installation"
             width={520}
             height={390}
             className="h-48 w-full object-cover md:h-full"

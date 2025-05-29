@@ -319,6 +319,50 @@
             "/images/desktop/other-projects/jpeg-optimizer_27.jpeg",
             "/images/desktop/other-projects/jpeg-optimizer_28.jpeg"
         ]
+    },
+    {
+        "id": 20,
+        "title": "Fence Installation",
+        "category": "Fence Installation",
+        "dateCompleted": "2025-04-15",
+        "location": "Bend, OR",
+        "images": [
+            "/images/desktop/job-1/jpeg-optimizer_474.jpeg",
+            "/images/desktop/job-1/jpeg-optimizer_475.jpeg",
+            "/images/desktop/job-1/jpeg-optimizer_476.jpeg",
+            "/images/desktop/job-1/jpeg-optimizer_477.jpeg",
+            "/images/desktop/job-1/jpeg-optimizer_478.jpeg"
+        ]
+    },
+    {
+        "id": 21,
+        "title": "Hillside Drive",
+        "category": "Excavation & EarthWork, Road & Site Development",
+        "dateCompleted": "2025-03-15",
+        "location": "Bend, OR",
+        "images": [
+            "/images/desktop/job-2/jpeg-optimizer_479.jpeg",
+            "/images/desktop/job-2/jpeg-optimizer_480.jpeg",
+            "/images/desktop/job-2/jpeg-optimizer_481.jpeg",
+            "/images/desktop/job-2/jpeg-optimizer_482.jpeg",
+            "/images/desktop/job-2/jpeg-optimizer_483.jpeg",
+            "/images/desktop/job-2/jpeg-optimizer_484.jpeg",
+            "/images/desktop/job-2/jpeg-optimizer_485.jpeg",
+            "/images/desktop/job-2/jpeg-optimizer_486.jpeg"
+        ]
+    },
+    {
+        "id": 22,
+        "title": "Haines Development",
+        "category": "Excavation & EarthWork, Custom Land Development",
+        "dateCompleted": "2025-04-02",
+        "location": "Bend, OR",
+        "images": [
+            "/images/desktop/job-3/jpeg-optimizer_487.jpeg",
+            "/images/desktop/job-3/jpeg-optimizer_488.jpeg",
+            "/images/desktop/job-3/jpeg-optimizer_489.jpeg",
+            "/images/desktop/job-3/jpeg-optimizer_490.jpeg"
+        ]
     }
   ]
 }

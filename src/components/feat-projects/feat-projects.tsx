@@ -1,6 +1,5 @@
 'use client';
 
-import { featuredProject } from './feat-proj';
 import ProjectCard from './feat-proj-card';
 
 export default function FeaturedProjects() {
@@ -13,7 +12,7 @@ export default function FeaturedProjects() {
         <h2 className="mb-4 text-center text-2xl font-bold text-black dark:text-white sm:mb-6 sm:text-3xl md:mb-8 md:text-4xl">
           Featured Project
         </h2>
-        <ProjectCard project={featuredProject} />
+        <ProjectCard/>
       </div>
     </div>
   );

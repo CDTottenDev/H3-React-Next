@@ -30,9 +30,9 @@ export const generateMetadata = (): Metadata => ({
   description: siteConfig.description,
   robots: { index: true, follow: true },
   icons: {
-    icon: '/favicon/favicon.ico',
-    shortcut: '/favicon/favicon-16x16.png',
-    apple: '/favicon/apple-touch-icon.png',
+    icon: '/images/home/logo favicon icon.png',
+    shortcut: '/images/home/logo favicon icon.png',
+    apple: '/images/home/logo favicon icon.png',
   },
   verification: {
     google: siteConfig.googleSiteVerificationId(),
@@ -42,7 +42,7 @@ export const generateMetadata = (): Metadata => ({
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.title,
-    images: '/images/home/logo1.3 final.png',
+    images: '/images/home/logo favicon icon.png',
     type: 'website',
     locale: 'en',
   },
@@ -50,7 +50,7 @@ export const generateMetadata = (): Metadata => ({
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
-    images: '/images/home/logo1.3 final.png',
+    images: '/images/home/logo favicon icon.png',
   },
 });
 

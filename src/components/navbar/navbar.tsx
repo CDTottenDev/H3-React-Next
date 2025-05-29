@@ -72,6 +72,7 @@ export const Navbar = () => {
             ['Services', '/#services'],
             ['Projects', '/projects'],
             ['About', '/#about'],
+            ['Blog', '/blog'],
           ].map(([title, url]) => (
             <Link
               key={url}
@@ -112,6 +113,7 @@ export const Navbar = () => {
               ['Services', '/#services'],
               ['Projects', '/projects'],
               ['About', '/#about'],
+              ['Blog', '/blog'],
             ].map(([title, url]) => (
               <Link
                 key={url}
