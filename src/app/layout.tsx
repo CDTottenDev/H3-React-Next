@@ -139,15 +139,26 @@ export const generateMetadata = (): Metadata => ({
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.title,
-    images: '/images/home/logo favicon icon.png',
+    images: [
+      {
+        url: '/images/home/logo favicon icon.png',
+        width: 1200,
+        height: 630,
+        alt: 'H3 Excavation & Construction Logo',
+      }
+    ],
     type: 'website',
-    locale: 'en',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
-    images: '/images/home/logo favicon icon.png',
+    images: ['/images/home/logo favicon icon.png'],
+    creator: '@h3excavation',
+  },
+  alternates: {
+    canonical: siteConfig.url(),
   },
 });
 
