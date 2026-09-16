@@ -21,8 +21,8 @@ export function ContactForm({ onClose }: ContactFormProps) {
         <h2 className="mb-6 text-center text-2xl font-bold text-foreground">
           Get in Touch
         </h2>
-        <form 
-          action="https://formspree.io/f/xnnqyngz" 
+        <form
+          action="https://formspree.io/f/xnnqyngz"
           method="POST"
           className="flex h-[calc(100%-4rem)] flex-col gap-6 md:flex-row"
         >

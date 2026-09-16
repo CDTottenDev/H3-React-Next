@@ -1,12 +1,12 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Clock } from "lucide-react"
+import Image from 'next/image';
+import Link from 'next/link';
+import { Clock } from 'lucide-react';
 
-import type { BlogPost } from "@/app/blog/types/blog"
-import { Card, CardContent, CardHeader } from "@/app/blog/components/ui/card"
-import { Badge } from "@/app/blog/components/ui/badge"
+import type { BlogPost } from '@/app/blog/types/blog';
+import { Card, CardContent, CardHeader } from '@/app/blog/components/ui/card';
+import { Badge } from '@/app/blog/components/ui/badge';
 interface BlogPostCardProps {
-  post: BlogPost
+  post: BlogPost;
 }
 
 export function BlogPostCard({ post }: BlogPostCardProps) {
@@ -26,10 +26,15 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
           </div>
         </CardHeader>
         <CardContent className="p-4 space-y-3">
-          <Badge variant="secondary" className="bg-red-50 text-red-700 hover:bg-red-100">
+          <Badge
+            variant="secondary"
+            className="bg-red-50 text-red-700 hover:bg-red-100"
+          >
             {post.category}
           </Badge>
-          <h2 className="text-xl font-semibold text-red-900 line-clamp-2">{post.title}</h2>
+          <h2 className="text-xl font-semibold text-red-900 line-clamp-2">
+            {post.title}
+          </h2>
           <p className="text-red-600/80 line-clamp-2">{post.excerpt}</p>
           <div className="flex items-center text-red-400 text-sm">
             <Clock className="h-4 w-4 mr-1" />
@@ -38,6 +43,5 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
         </CardContent>
       </Card>
     </Link>
-  )
+  );
 }
-

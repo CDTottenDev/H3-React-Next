@@ -1,7 +1,7 @@
-"use client"
+'use client';
 
-import { useState, useEffect } from "react"
-import { ContactForm } from "@/components/contact/contact-form"
+import { useState, useEffect } from 'react';
+import { ContactForm } from '@/components/contact/contact-form';
 
 interface ContactButtonProps {
   className?: string;
@@ -16,27 +16,27 @@ interface ContactButtonProps {
 }
 
 export const ContactButton = ({
-  className = "",
+  className = '',
   buttonText = {
-    contact: "Contact",
-    here: "Here"
+    contact: 'Contact',
+    here: 'Here',
   },
   position = {
-    right: "mr-20",
-    top: "mt-4"
-  }
+    right: 'mr-20',
+    top: 'mt-4',
+  },
 }: ContactButtonProps) => {
-  const [isContactOpen, setIsContactOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
+      setScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -73,5 +73,5 @@ export const ContactButton = ({
         </div>
       )}
     </>
-  )
-}
+  );
+};

@@ -33,12 +33,15 @@ export async function GET(request: Request) {
     const project = db.projects.find((p) => p.id === parseInt(id));
     if (project) {
       // Validate and filter images
-      const validImages = project.images
-        ?.filter(img => typeof img === 'string' && img.startsWith('/images/'))
-        .map(img => img.replace(/\\/g, '/')) || [];
+      const validImages =
+        project.images
+          ?.filter(
+            (img) => typeof img === 'string' && img.startsWith('/images/')
+          )
+          .map((img) => img.replace(/\\/g, '/')) || [];
       return NextResponse.json({
         ...project,
-        images: validImages
+        images: validImages,
       });
     }
     return NextResponse.json(null);

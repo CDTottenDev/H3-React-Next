@@ -9,11 +9,7 @@ export function ContactFormClient() {
 
   return (
     <>
-      <Button
-        type="submit"
-        className="w-full"
-        disabled={isSubmitting}
-      >
+      <Button type="submit" className="w-full" disabled={isSubmitting}>
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
       <button type="submit" className="hidden" aria-hidden="true" />

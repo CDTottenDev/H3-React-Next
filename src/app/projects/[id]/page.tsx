@@ -21,7 +21,7 @@ export default function ProjectGallery() {
       if (data) {
         setProject({
           ...data,
-          images: data.images || []
+          images: data.images || [],
         });
       }
     }
@@ -111,7 +111,9 @@ export default function ProjectGallery() {
         </div>
       ) : (
         <div className="text-center py-8">
-          <p className="text-gray-600 dark:text-gray-400">No images available for this project</p>
+          <p className="text-gray-600 dark:text-gray-400">
+            No images available for this project
+          </p>
         </div>
       )}
 

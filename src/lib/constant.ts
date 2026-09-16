@@ -1,6 +1,8 @@
 export const siteConfig = {
-  title: 'H3 Excavation & Construction | Central Oregon\'s Premier Excavation & Construction Company',
-  description: 'Central Oregon\'s trusted excavation and construction company. Expert services in residential and commercial excavation, utility trenching, septic systems, and land development. Serving Bend, Redmond, Sisters, and all of Central Oregon.',
+  title:
+    "H3 Excavation & Construction | Central Oregon's Premier Excavation & Construction Company",
+  description:
+    "Central Oregon's trusted excavation and construction company. Expert services in residential and commercial excavation, utility trenching, septic systems, and land development. Serving Bend, Redmond, Sisters, and all of Central Oregon.",
   keywords: () => [
     'H3 Excavation and Construction',
     'Central Oregon Excavation',
@@ -31,7 +33,7 @@ export const siteConfig = {
     'Residential Construction Bend',
     'Land Clearing Oregon',
     'Earthwork Services Oregon',
-    'Project Management Oregon'
+    'Project Management Oregon',
   ],
   url: () => 'https://www.h3excavationandconst.com',
   googleSiteVerificationId: () => process.env.GOOGLE_SITE_VERIFICATION_ID || '',

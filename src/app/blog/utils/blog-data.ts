@@ -4,14 +4,15 @@ import type { BlogPost, Category } from '@/app/blog/types/blog';
 export const blogPosts: BlogPost[] = [
   //Essential Safety Protocols for Construction Sites
   {
-    id: "1",
-    title: "Essential Safety Protocols for Construction Sites",
-    excerpt: "Learn about the critical safety measures and protocols that every construction site must implement to ensure worker safety and compliance...",
-    date: "2025-04-15",
-    category: "Safety",
-    readingTime: "6 min read",
-    image: "/images/blog/construction-safety.svg",
-    slug: "construction-safety-protocols",
+    id: '1',
+    title: 'Essential Safety Protocols for Construction Sites',
+    excerpt:
+      'Learn about the critical safety measures and protocols that every construction site must implement to ensure worker safety and compliance...',
+    date: '2025-04-15',
+    category: 'Safety',
+    readingTime: '6 min read',
+    image: '/images/blog/construction-safety.svg',
+    slug: 'construction-safety-protocols',
     content: `
       <p class="text-lg border-l-4 border-yellow-300 dark:border-yellow-600 pl-4 mb-8 text-gray-800 dark:text-gray-200">
         Construction site safety is paramount in our industry. As we continue to prioritize worker safety and regulatory compliance, 
@@ -277,14 +278,15 @@ export const blogPosts: BlogPost[] = [
   },
   //Modern Excavation Techniques for Residential Projects
   {
-    id: "2",
-    title: "Modern Excavation Techniques for Residential Projects",
-    excerpt: "Discover the latest excavation methods and equipment that are revolutionizing residential construction projects...",
-    date: "2025-05-10",
-    category: "Excavation",
-    readingTime: "8 min read",
-    image: "/images/blog/excavation.svg",
-    slug: "modern-excavation-techniques",
+    id: '2',
+    title: 'Modern Excavation Techniques for Residential Projects',
+    excerpt:
+      'Discover the latest excavation methods and equipment that are revolutionizing residential construction projects...',
+    date: '2025-05-10',
+    category: 'Excavation',
+    readingTime: '8 min read',
+    image: '/images/blog/excavation.svg',
+    slug: 'modern-excavation-techniques',
     content: `
       <div class="mb-10">
         <p class="text-lg mb-4 text-gray-800 dark:text-gray-200">
@@ -431,14 +433,15 @@ export const blogPosts: BlogPost[] = [
   },
   //Sustainable Excavation Practices for Central Oregon Construction
   {
-    id: "3",
-    title: "Sustainable Excavation Practices for Central Oregon Construction",
-    excerpt: "Understanding Central Oregon's unique excavation challenges and sustainable practices in the high desert environment...",
-    date: "2025-03-05",
-    category: "Sustainability",
-    readingTime: "12 min read",
-    image: "/images/blog/land-development.svg",
-    slug: "sustainable-construction-2025",
+    id: '3',
+    title: 'Sustainable Excavation Practices for Central Oregon Construction',
+    excerpt:
+      "Understanding Central Oregon's unique excavation challenges and sustainable practices in the high desert environment...",
+    date: '2025-03-05',
+    category: 'Sustainability',
+    readingTime: '12 min read',
+    image: '/images/blog/land-development.svg',
+    slug: 'sustainable-construction-2025',
     content: `
       <div class="mb-10">
         <p class="text-lg mb-4 text-gray-800 dark:text-gray-200">
@@ -634,14 +637,16 @@ export const blogPosts: BlogPost[] = [
   },
   //Why Pole Barns Are a Smart Investment for West Coast Property Owners
   {
-    id: "4",
-    title: "Why Pole Barns Are a Smart Investment for West Coast Property Owners",
-    excerpt: "Discover the benefits of pole barns on the West Coast—from their cost-effective construction to their durability in diverse climates. Learn how they're used for farming, storage, workshops, and more.",
-    date: "2025-06-06",
-    category: "Innovation",
-    readingTime: "15 min read",
-    image: "/images/blog/barn.svg",
-    slug: "pole-barns-west-coast-guide",
+    id: '4',
+    title:
+      'Why Pole Barns Are a Smart Investment for West Coast Property Owners',
+    excerpt:
+      "Discover the benefits of pole barns on the West Coast—from their cost-effective construction to their durability in diverse climates. Learn how they're used for farming, storage, workshops, and more.",
+    date: '2025-06-06',
+    category: 'Innovation',
+    readingTime: '15 min read',
+    image: '/images/blog/barn.svg',
+    slug: 'pole-barns-west-coast-guide',
     content: `
       <div class="mb-10">
         <p class="text-lg mb-4 text-gray-800 dark:text-gray-200">
@@ -914,18 +919,20 @@ export const blogPosts: BlogPost[] = [
           the unique challenges of West Coast building requirements.
         </p>
       </div>
-    `
+    `,
   },
   //trenching
   {
-    id: "5",
-    title: "Trenching Services for Residential and Commercial Construction: Why Hiring Professionals Matters",
-    excerpt: "Learn why professional trenching services are essential for residential and commercial construction. Discover the benefits of expert utility trenching for safe, efficient, and code-compliant results.",
-    date: "2025-06-05",
-    category: "Construction",
-    readingTime: "10 min read",
-    image: "/images/blog/excavator.svg",
-    slug: "professional-trenching-utilities-construction",
+    id: '5',
+    title:
+      'Trenching Services for Residential and Commercial Construction: Why Hiring Professionals Matters',
+    excerpt:
+      'Learn why professional trenching services are essential for residential and commercial construction. Discover the benefits of expert utility trenching for safe, efficient, and code-compliant results.',
+    date: '2025-06-05',
+    category: 'Construction',
+    readingTime: '10 min read',
+    image: '/images/blog/excavator.svg',
+    slug: 'professional-trenching-utilities-construction',
     content: `
       <div class="mb-10">
         <p class="text-lg mb-4 text-gray-800 dark:text-gray-200">
@@ -1151,20 +1158,23 @@ export const blogPosts: BlogPost[] = [
           can save you time, money, and headaches in the long run.
         </p>
       </div>
-    `
-  }
+    `,
+  },
 ];
 
 // Generate categories from blog posts
 export const getCategories = (): Category[] => {
   const categoryMap = new Map<string, number>();
-  
-  blogPosts.forEach(post => {
+
+  blogPosts.forEach((post) => {
     const currentCount = categoryMap.get(post.category) || 0;
     categoryMap.set(post.category, currentCount + 1);
   });
-  
-  return Array.from(categoryMap.entries()).map(([name, count]) => ({ name, count }));
+
+  return Array.from(categoryMap.entries()).map(([name, count]) => ({
+    name,
+    count,
+  }));
 };
 
 // Get all blog posts
@@ -1174,5 +1184,5 @@ export const getAllBlogPosts = (): BlogPost[] => {
 
 // Get a single blog post by slug
 export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
-  return blogPosts.find(post => post.slug === slug);
-}; 
+  return blogPosts.find((post) => post.slug === slug);
+};

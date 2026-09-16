@@ -22,36 +22,39 @@ export function ServicesInfo({ id }: ServicesInfoProps) {
     'Full-service construction and contracting solutions. From land preparation to concrete work and project management, we provide comprehensive construction services. Our experienced team ensures quality workmanship and timely completion of your project.',
   ];
 
-  const handleMouseEnter = useCallback((index: number, event: React.MouseEvent) => {
-    if (tooltipTimeoutRef.current) {
-      clearTimeout(tooltipTimeoutRef.current);
-    }
+  const handleMouseEnter = useCallback(
+    (index: number, event: React.MouseEvent) => {
+      if (tooltipTimeoutRef.current) {
+        clearTimeout(tooltipTimeoutRef.current);
+      }
 
-    const rect = event.currentTarget.getBoundingClientRect();
-    const tooltipHeight = 200; // Approximate height of tooltip
-    const viewportHeight = window.innerHeight;
-    const spaceBelow = viewportHeight - rect.top;
-    const spaceAbove = rect.top;
+      const rect = event.currentTarget.getBoundingClientRect();
+      const tooltipHeight = 200; // Approximate height of tooltip
+      const viewportHeight = window.innerHeight;
+      const spaceBelow = viewportHeight - rect.top;
+      const spaceAbove = rect.top;
 
-    // Calculate position to ensure tooltip stays within viewport
-    let top = rect.top;
-    if (spaceBelow < tooltipHeight && spaceAbove > tooltipHeight) {
-      // If not enough space below but enough space above, show above
-      top = rect.top - tooltipHeight - 10;
-    } else {
-      // Show below with some padding
-      top = rect.top + rect.height + 10;
-    }
+      // Calculate position to ensure tooltip stays within viewport
+      let top = rect.top;
+      if (spaceBelow < tooltipHeight && spaceAbove > tooltipHeight) {
+        // If not enough space below but enough space above, show above
+        top = rect.top - tooltipHeight - 10;
+      } else {
+        // Show below with some padding
+        top = rect.top + rect.height + 10;
+      }
 
-    setTooltipPosition({
-      x: rect.left + rect.width / 2,
-      y: top,
-    });
+      setTooltipPosition({
+        x: rect.left + rect.width / 2,
+        y: top,
+      });
 
-    tooltipTimeoutRef.current = setTimeout(() => {
-      setActiveTooltip(index);
-    }, 100); // Small delay to prevent flickering
-  }, []);
+      tooltipTimeoutRef.current = setTimeout(() => {
+        setActiveTooltip(index);
+      }, 100); // Small delay to prevent flickering
+    },
+    []
+  );
 
   const handleMouseLeave = useCallback(() => {
     if (tooltipTimeoutRef.current) {
@@ -82,8 +85,10 @@ export function ServicesInfo({ id }: ServicesInfoProps) {
             Professional Excavation & Construction Services in Central Oregon
           </h1>
           <p className="mx-auto max-w-3xl text-lg text-gray-700 dark:text-gray-300">
-            Serving Bend, Redmond, Sisters, and surrounding areas with expert excavation and construction services. 
-            From residential site preparation to commercial development, we deliver quality results you can trust.
+            Serving Bend, Redmond, Sisters, and surrounding areas with expert
+            excavation and construction services. From residential site
+            preparation to commercial development, we deliver quality results
+            you can trust.
           </p>
         </div>
 
@@ -114,7 +119,8 @@ export function ServicesInfo({ id }: ServicesInfoProps) {
               Residential Construction
             </h2>
             <p className="text-center text-gray-600 dark:text-gray-400">
-              Custom home site preparation and excavation services in Central Oregon
+              Custom home site preparation and excavation services in Central
+              Oregon
             </p>
           </div>
 
@@ -144,7 +150,8 @@ export function ServicesInfo({ id }: ServicesInfoProps) {
               Commercial Construction
             </h2>
             <p className="text-center text-gray-600 dark:text-gray-400">
-              Professional commercial excavation and construction services in Bend and Central Oregon
+              Professional commercial excavation and construction services in
+              Bend and Central Oregon
             </p>
           </div>
 
@@ -174,7 +181,8 @@ export function ServicesInfo({ id }: ServicesInfoProps) {
               Excavation Services
             </h2>
             <p className="text-center text-gray-600 dark:text-gray-400">
-              Comprehensive excavation and earthwork services throughout Central Oregon
+              Comprehensive excavation and earthwork services throughout Central
+              Oregon
             </p>
           </div>
 
@@ -204,7 +212,8 @@ export function ServicesInfo({ id }: ServicesInfoProps) {
               Utility Trenching
             </h2>
             <p className="text-center text-gray-600 dark:text-gray-400">
-              Professional utility trenching services for water, sewer, and electrical lines
+              Professional utility trenching services for water, sewer, and
+              electrical lines
             </p>
           </div>
 
@@ -264,7 +273,8 @@ export function ServicesInfo({ id }: ServicesInfoProps) {
               Land Development
             </h2>
             <p className="text-center text-gray-600 dark:text-gray-400">
-              Complete land development and site preparation services in Central Oregon
+              Complete land development and site preparation services in Central
+              Oregon
             </p>
           </div>
         </div>

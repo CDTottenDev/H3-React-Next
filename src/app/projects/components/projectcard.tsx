@@ -12,7 +12,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg dark:bg-gray-900 lg:hover:scale-[1.03]">
-      <Link 
+      <Link
         href={`/projects/${project.id}`}
         className="grow"
         onClick={(e) => {
@@ -23,7 +23,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
       >
         <div className="relative h-32 w-full overflow-hidden sm:h-40 lg:h-40 xl:h-40">
           <Image
-            src={firstImage.startsWith('/images/') ? firstImage : '/images/default-project.jpg'}
+            src={
+              firstImage.startsWith('/images/')
+                ? firstImage
+                : '/images/default-project.jpg'
+            }
             alt={project.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105 lg:group-hover:scale-110"
