@@ -1,7 +1,5 @@
-import js from '@eslint/js';
-import nextPlugin from 'eslint-config-next';
+import nextConfig from 'eslint-config-next';
 
-export default [
-  js.configs.recommended,
-  nextPlugin
-]; 
+const eslintConfig = [...nextConfig];
+
+export default eslintConfig;
