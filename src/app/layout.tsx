@@ -8,12 +8,12 @@ import Script from 'next/script';
 import Loading from './loading';
 
 import { Navbar } from '@/components/navbar/navbar';
-import ThemeProviderWrapper from '@/components/theme-provider-wrapper';
+import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constant';
 import { cn } from '@/lib/utils';
 import { VersionChecker } from '@/components/version-checker';
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from '@vercel/analytics/next';
 
 const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -24,97 +24,93 @@ const roboto = Roboto({
 
 // JSON-LD structured data
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "H3 Excavation & Construction",
-  "image": "/images/home/logo favicon icon.png",
-  "url": siteConfig.url(),
-  "telephone": "+1-541-XXX-XXXX",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Your Street Address",
-    "addressLocality": "Bend",
-    "addressRegion": "OR",
-    "postalCode": "97701",
-    "addressCountry": "US"
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'H3 Excavation & Construction',
+  image: '/images/home/logo favicon icon.png',
+  url: siteConfig.url(),
+  telephone: '+1-541-XXX-XXXX',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Your Street Address',
+    addressLocality: 'Bend',
+    addressRegion: 'OR',
+    postalCode: '97701',
+    addressCountry: 'US',
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "44.0582",
-    "longitude": "-121.3153"
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '44.0582',
+    longitude: '-121.3153',
   },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "07:00",
-    "closes": "17:00"
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '07:00',
+    closes: '17:00',
   },
-  "sameAs": [
-    "https://www.facebook.com/h3excavation",
-    "https://www.linkedin.com/company/h3excavation"
+  sameAs: [
+    'https://www.facebook.com/h3excavation',
+    'https://www.linkedin.com/company/h3excavation',
   ],
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": "44.0582",
-      "longitude": "-121.3153"
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: '44.0582',
+      longitude: '-121.3153',
     },
-    "geoRadius": "50000"
+    geoRadius: '50000',
   },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Excavation and Construction Services",
-    "itemListElement": [
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Excavation and Construction Services',
+    itemListElement: [
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Residential Excavation",
-          "description": "Custom home site preparation and excavation services"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Residential Excavation',
+          description: 'Custom home site preparation and excavation services',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Commercial Excavation",
-          "description": "Commercial site preparation and excavation services"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Commercial Excavation',
+          description: 'Commercial site preparation and excavation services',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Utility Trenching",
-          "description": "Professional utility trenching services for water, sewer, and electrical lines"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Utility Trenching',
+          description:
+            'Professional utility trenching services for water, sewer, and electrical lines',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Septic Systems",
-          "description": "DEQ certified septic system installation and repair"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Septic Systems',
+          description: 'DEQ certified septic system installation and repair',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Land Development",
-          "description": "Complete land development and site preparation services"
-        }
-      }
-    ]
-  }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Land Development',
+          description:
+            'Complete land development and site preparation services',
+        },
+      },
+    ],
+  },
 };
 
 export const generateMetadata = (): Metadata => ({
@@ -145,7 +141,7 @@ export const generateMetadata = (): Metadata => ({
         width: 1200,
         height: 630,
         alt: 'H3 Excavation & Construction Logo',
-      }
+      },
     ],
     type: 'website',
     locale: 'en_US',
@@ -179,17 +175,13 @@ const RootLayout = ({ children }: PropsWithChildren) => {
           roboto.variable
         )}
       >
-        <Suspense fallback={<Loading />}>
-          <ThemeProviderWrapper attribute="class">
-            <>
-              <Navbar />
-              {children}
-              <Toaster />
-              <VersionChecker />
-              <Analytics />
-            </>
-          </ThemeProviderWrapper>
-        </Suspense>
+        <ThemeProvider attribute="class">
+          <Navbar />
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <Toaster />
+          <VersionChecker />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
