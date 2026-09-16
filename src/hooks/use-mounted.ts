@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
-export const useMounted = () => {
-  const [mounted, setMounted] = useState(false);
+// Never notifies: the value only differs between the server and client snapshots.
+const subscribe = () => () => {};
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  return mounted;
-};
+export const useMounted = () =>
+  useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false
+  );

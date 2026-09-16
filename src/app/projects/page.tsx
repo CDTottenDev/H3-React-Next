@@ -1,29 +1,29 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ProjectCard } from './components/projectcard';
 import { getProjects } from '@/lib/db';
 import { Project } from '@/types/project';
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Get unique categories
-  const categories = Array.from(new Set(projects.flatMap(p => p.category.split(', '))));
+  const categories = Array.from(
+    new Set(projects.flatMap((p) => p.category.split(', ')))
+  );
 
-  useEffect(() => {
+  const filteredProjects = useMemo(() => {
     if (selectedCategories.length === 0) {
-      setFilteredProjects(projects);
-    } else {
-      setFilteredProjects(projects.filter(project => 
-        selectedCategories.some(cat => project.category.includes(cat))
-      ));
+      return projects;
     }
+    return projects.filter((project) =>
+      selectedCategories.some((cat) => project.category.includes(cat))
+    );
   }, [selectedCategories, projects]);
 
   useEffect(() => {
@@ -34,7 +34,6 @@ export default function ProjectsPage() {
         // Sort projects in ascending order (A to Z)
         const sortedData = data.sort((a, b) => a.title.localeCompare(b.title));
         setProjects(sortedData);
-        setFilteredProjects(sortedData);
       } catch (err) {
         console.error('Failed to load projects:', err);
         setError('Failed to load projects');
@@ -56,9 +55,9 @@ export default function ProjectsPage() {
   }, []);
 
   const handleCategoryToggle = (category: string) => {
-    setSelectedCategories(prev => 
+    setSelectedCategories((prev) =>
       prev.includes(category)
-        ? prev.filter(cat => cat !== category)
+        ? prev.filter((cat) => cat !== category)
         : [...prev, category]
     );
   };
@@ -96,32 +95,46 @@ export default function ProjectsPage() {
       </button>
 
       {/* Filter Sidebar */}
-      <div className={`w-64 p-4 fixed bg-white dark:bg-gray-800 shadow-lg top-1/2 -translate-y-1/2 border border-gray-100 dark:border-gray-700 transition-transform duration-300 z-10
-        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
-        <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">Filter by Category</h3>
+      <div
+        className={`w-64 p-4 fixed bg-white dark:bg-gray-800 shadow-lg top-1/2 -translate-y-1/2 border border-gray-100 dark:border-gray-700 transition-transform duration-300 z-10
+        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}
+      >
+        <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">
+          Filter by Category
+        </h3>
         <div className="space-y-4">
-          {categories.map(category => (
-            <div 
+          {categories.map((category) => (
+            <div
               key={category}
               className="flex items-center space-x-2 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 px-2 py-1 rounded-md transition-colors"
               onClick={() => handleCategoryToggle(category)}
             >
-              <div className={`h-5 w-5 rounded-full border-2 transition-all duration-200
-                ${selectedCategories.includes(category) 
-                  ? 'border-teal-600 dark:border-teal-500 bg-teal-600 dark:bg-teal-500 shadow-inner' 
-                  : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 hover:border-teal-400 dark:hover:border-teal-300'}
-              `}>
+              <div
+                className={`h-5 w-5 rounded-full border-2 transition-all duration-200
+                ${
+                  selectedCategories.includes(category)
+                    ? 'border-teal-600 dark:border-teal-500 bg-teal-600 dark:bg-teal-500 shadow-inner'
+                    : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 hover:border-teal-400 dark:hover:border-teal-300'
+                }
+              `}
+              >
                 {selectedCategories.includes(category) && (
-                  <svg 
-                    className="w-full h-full text-white p-0.5" 
-                    viewBox="0 0 20 20" 
+                  <svg
+                    className="w-full h-full text-white p-0.5"
+                    viewBox="0 0 20 20"
                     fill="currentColor"
                   >
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 )}
               </div>
-              <span className="select-none text-gray-700 dark:text-gray-200">{category}</span>
+              <span className="select-none text-gray-700 dark:text-gray-200">
+                {category}
+              </span>
             </div>
           ))}
         </div>

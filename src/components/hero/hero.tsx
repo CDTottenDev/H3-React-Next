@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/enforces-negative-arbitrary-values */
 'use client';
 
 import { useEffect, useState } from 'react';

@@ -1,16 +1,22 @@
-"use client"
+'use client';
 
-import * as React from "react"
-import { Menu } from "lucide-react"
-import { useRouter } from 'next/navigation'
-import Link from "next/link"
+import * as React from 'react';
+import { Menu } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { BlogSidebar } from "@/app/blog/components/blog-sidebar"
-import { Button } from "@/app/blog/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/app/blog/components/ui/sheet"
-import { searchBlogPosts } from "@/app/blog/utils/search"
-import { getAllBlogPosts, getCategories } from "@/app/blog/utils/blog-data"
-import type { BlogPost, Category } from "@/app/blog/types/blog"
+import { BlogSidebar } from '@/app/blog/components/blog-sidebar';
+import { Button } from '@/app/blog/components/ui/button';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from '@/app/blog/components/ui/sheet';
+import { searchBlogPosts } from '@/app/blog/utils/search';
+import { getAllBlogPosts, getCategories } from '@/app/blog/utils/blog-data';
+import type { BlogPost, Category } from '@/app/blog/types/blog';
 
 // Get data from our utility functions
 const samplePosts = getAllBlogPosts();
@@ -26,41 +32,59 @@ const RetroBlogPostCard: React.FC<{ post: BlogPost }> = ({ post }) => {
             {post.category}
           </span>
         </div>
-        <div className="aspect-[16/9] overflow-hidden">
-          <img 
-            src={post.image} 
-            alt={post.title} 
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" 
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
       </div>
       <div className="p-6">
-        <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-gray-100 line-clamp-2">{post.title}</h3>
-        <p className="mb-4 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{post.excerpt}</p>
+        <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-gray-100 line-clamp-2">
+          {post.title}
+        </h3>
+        <p className="mb-4 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+          {post.excerpt}
+        </p>
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-500 dark:text-gray-400">{post.date}</span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {post.date}
+          </span>
           <Link href={`/blog/${post.slug}`}>
             <div className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700">
               Read More
-              <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="ml-2 h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </div>
           </Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default function BlogPage() {
-  const router = useRouter()
-  const [searchQuery, setSearchQuery] = React.useState("")
-  const filteredPosts = searchBlogPosts(samplePosts, searchQuery)
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const filteredPosts = searchBlogPosts(samplePosts, searchQuery);
 
   const handleBack = () => {
-    router.back()
-  }
+    router.back();
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -74,9 +98,17 @@ export default function BlogPage() {
                 <span>Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-80 p-0 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
-              <SheetTitle className="px-4 py-3 bg-blue-600 text-white">Blog Navigation</SheetTitle>
-              <BlogSidebar categories={sampleCategories} onSearch={setSearchQuery} />
+            <SheetContent
+              side="left"
+              className="w-80 p-0 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700"
+            >
+              <SheetTitle className="px-4 py-3 bg-blue-600 text-white">
+                Blog Navigation
+              </SheetTitle>
+              <BlogSidebar
+                categories={sampleCategories}
+                onSearch={setSearchQuery}
+              />
             </SheetContent>
           </Sheet>
 
@@ -87,7 +119,11 @@ export default function BlogPage() {
                 <h2 className="font-bold text-white">Blog Navigation</h2>
               </div>
               <div className="p-4">
-                <BlogSidebar categories={sampleCategories} onSearch={setSearchQuery} className="" />
+                <BlogSidebar
+                  categories={sampleCategories}
+                  onSearch={setSearchQuery}
+                  className=""
+                />
               </div>
             </div>
           </div>
@@ -96,13 +132,16 @@ export default function BlogPage() {
           <main className="flex-1">
             <div className="mb-8">
               <div className="inline-block rounded-full bg-blue-100 dark:bg-blue-900/50 px-4 py-1.5 mb-4">
-                <span className="text-sm font-medium text-blue-800 dark:text-blue-300">Industry insights & updates</span>
+                <span className="text-sm font-medium text-blue-800 dark:text-blue-300">
+                  Industry insights & updates
+                </span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                 Excavation & Construction Blog
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                Expert insights and industry updates for construction professionals
+                Expert insights and industry updates for construction
+                professionals
               </p>
             </div>
 
@@ -115,22 +154,46 @@ export default function BlogPage() {
             {filteredPosts.length === 0 && (
               <div className="rounded-lg bg-white dark:bg-gray-800 p-8 text-center shadow-lg border border-gray-200 dark:border-gray-700">
                 <div className="mb-4 inline-block rounded-full bg-red-100 dark:bg-red-900/50 p-2">
-                  <svg className="h-6 w-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="h-6 w-6 text-red-600 dark:text-red-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-100">No Results Found</h3>
-                <p className="text-gray-600 dark:text-gray-400">No posts found matching your search criteria.</p>
+                <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-100">
+                  No Results Found
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  No posts found matching your search criteria.
+                </p>
               </div>
             )}
-            
+
             <div className="mt-12 flex justify-center">
-              <button 
-                onClick={handleBack} 
+              <button
+                onClick={handleBack}
                 className="inline-flex items-center rounded-md bg-gray-900 dark:bg-gray-800 px-6 py-3 text-sm font-semibold text-white dark:text-gray-100 shadow-sm transition-colors hover:bg-gray-800 dark:hover:bg-gray-700 border border-gray-700"
               >
-                <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                <svg
+                  className="mr-2 h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
                 </svg>
                 Go Back
               </button>
@@ -139,5 +202,5 @@ export default function BlogPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

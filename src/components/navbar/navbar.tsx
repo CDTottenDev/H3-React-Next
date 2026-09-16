@@ -23,7 +23,6 @@ export const Navbar = () => {
   return (
     <header
       role="banner"
-      // eslint-disable-next-line tailwindcss/enforces-negative-arbitrary-values
       className={`fixed left-0 top-0 z-20 w-full bg-background/95 shadow-sm backdrop-blur transition-all duration-500 ease-in-out supports-[backdrop-filter]:bg-background/95 ${
         scrolled
           ? 'w-[90%] -translate-y-[-20px] scale-x-90 rounded-lg delay-75'
